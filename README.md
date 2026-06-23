@@ -20,20 +20,42 @@ interactifs.
 
 ```
 .
-├── index.html              Page d'accueil
+├── index.html                   Page d'accueil
 ├── pages/
-│   ├── periode-1.html      1840–1896
-│   ├── periode-2.html      1896–1945
-│   ├── periode-3.html      1945–1980
-│   ├── periode-4.html      1980 à aujourd'hui
-│   ├── methode.html        Méthode historique
-│   └── revision.html       Quiz de révision interactifs
+│   ├── periode-1.html           Notes de cours 1840–1896
+│   ├── periode-2.html           Notes de cours 1896–1945
+│   ├── periode-3.html           Notes de cours 1945–1980
+│   ├── periode-4.html           Notes de cours 1980 à aujourd'hui
+│   ├── documents.html           Hub des dossiers documentaires
+│   ├── documents-periode-1.html Galerie de documents (124)
+│   ├── documents-periode-2.html Galerie de documents (112)
+│   ├── documents-periode-3.html Galerie de documents (119)
+│   ├── documents-periode-4.html Galerie de documents (80)
+│   ├── methode.html             Méthode historique
+│   └── revision.html            Quiz de révision interactifs
 ├── css/
-│   └── style.css           Feuille de style (responsive)
+│   └── style.css                Feuille de style (responsive)
 ├── js/
-│   └── main.js             Menu mobile, quiz, année dynamique
-└── images/
-    └── hero.svg            Image de bannière
+│   └── main.js                  Menu mobile, quiz, année dynamique
+├── images/
+│   ├── hero.svg                 Image de bannière
+│   └── placeholder-*.svg        Visuels de remplacement des figures
+├── data/
+│   └── repertoire_images.json   Source des 435 documents (RÉCITUS)
+└── tools/
+    └── generer_documents.py     Génère les pages de galerie depuis le JSON
+```
+
+## Dossiers documentaires (galeries générées)
+
+Les pages `pages/documents-periode-*.html` et `pages/documents.html` sont
+**générées automatiquement** à partir de `data/repertoire_images.json` (435 documents
+issus de RÉCITUS — Service national du RÉCIT de l'univers social — et partenaires).
+Les images sont affichées directement depuis `documents.recitus.qc.ca` (aucun fichier
+n'est copié dans le dépôt). Pour régénérer après une mise à jour du JSON :
+
+```bash
+python3 tools/generer_documents.py
 ```
 
 ## Technologies
