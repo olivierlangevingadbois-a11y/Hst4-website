@@ -670,3 +670,125 @@ tbody tr:nth-child(even) {
     margin-top: 0.6rem;
   }
 }
+
+/* ---------- Figures et images (sources BAnQ, domaine public) ---------- */
+.figure {
+  margin: 1.6rem 0;
+  background: var(--blanc);
+  border: 1px solid #e3e3e3;
+  border-radius: var(--rayon);
+  overflow: hidden;
+  box-shadow: var(--ombre);
+}
+
+.figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: var(--bleu-clair);
+}
+
+.figure figcaption {
+  padding: 0.7rem 1rem;
+  font-size: 0.9rem;
+  color: var(--gris-fonce);
+  border-top: 3px solid var(--or);
+}
+
+.figure figcaption .source {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.8rem;
+  color: var(--gris);
+  font-style: italic;
+}
+
+.figure figcaption .source a {
+  color: var(--gris);
+}
+
+/* Deux figures côte à côte sur grand écran */
+.figures-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+
+.figures-2 .figure {
+  margin: 1.6rem 0 0;
+}
+
+@media (max-width: 640px) {
+  .figures-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- « Façons de répondre » (opérations intellectuelles) ---------- */
+.facon {
+  border: 2px solid var(--bleu);
+  border-radius: var(--rayon);
+  margin: 1.4rem 0;
+  overflow: hidden;
+}
+
+.facon .facon-titre {
+  background: var(--bleu);
+  color: var(--blanc);
+  font-weight: 700;
+  padding: 0.6rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.facon .facon-titre::before {
+  content: "✍";
+  font-size: 1.1rem;
+}
+
+.facon .facon-corps {
+  padding: 1rem 1.2rem;
+}
+
+.facon .facon-corps p:last-child {
+  margin-bottom: 0;
+}
+
+/* Amorces de phrases / mots-clés à réutiliser dans une réponse */
+.amorces {
+  list-style: none;
+  margin: 0.6rem 0 0 !important;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.amorces li {
+  background: var(--bleu-clair);
+  color: var(--bleu-fonce);
+  border-radius: 6px;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.9rem;
+  margin: 0 !important;
+}
+
+/* Exemple de réponse modèle */
+.reponse-modele {
+  background: #f0f7f1;
+  border-left: 5px solid #2e7d32;
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  margin-top: 0.8rem;
+}
+
+.reponse-modele .etiquette {
+  display: block;
+  font-weight: 700;
+  color: #1b5e20;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.3rem;
+}

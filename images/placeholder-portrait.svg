@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="450" height="560" viewBox="0 0 450 560" role="img" aria-label="Image à insérer">
+  <rect width="450" height="560" fill="#e8f1f7"/>
+  <rect x="1" y="1" width="448" height="558" fill="none" stroke="#b9d4e6" stroke-width="2" stroke-dasharray="10 8"/>
+  <g fill="#9bbdd2" transform="translate(225 220)">
+    <circle cx="0" cy="-50" r="40"/>
+    <path d="M-80 90 Q-80 0 0 0 Q80 0 80 90 Z"/>
+  </g>
+  <text x="225" y="400" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="24" fill="#5a7c91" font-weight="700">Image à insérer</text>
+  <text x="225" y="432" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" fill="#7494a6">Source : BAnQ — domaine public</text>
+</svg>

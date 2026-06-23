@@ -50,8 +50,32 @@ python3 -m http.server 8000
 # puis ouvrir http://localhost:8000
 ```
 
+## Insérer des images de BAnQ (domaine public)
+
+Chaque page de période contient des emplacements `<figure>` prêts à recevoir une
+image, signalés par un commentaire HTML `IMAGE À INSÉRER`. Tant qu'aucune image
+n'est ajoutée, un visuel de remplacement (`images/placeholder-paysage.svg` ou
+`placeholder-portrait.svg`) s'affiche.
+
+Pour ajouter une vraie image depuis
+[BAnQ — documents du domaine public](https://numerique.banq.qc.ca/collections/documents-du-domaine-public) :
+
+1. Trouve le document voulu sur le portail de BAnQ et **télécharge l'image**
+   (vérifie qu'elle est bien dans le domaine public).
+2. **Dépose le fichier** dans le dossier `images/` (ex. `images/p1-confederation.jpg`).
+3. Dans la page concernée, remplace le `src` du placeholder :
+   ```html
+   <img src="../images/p1-confederation.jpg" alt="..." />
+   ```
+4. **Complète la légende** et l'attribution dans `<figcaption>` : remplace `cote XXXXX`
+   par la cote réelle et ajuste le texte.
+
+> ⚠️ Toujours **créditer la source** (BAnQ + cote) et confirmer le statut « domaine
+> public » de chaque document avant publication.
+
 ## Pistes d'amélioration
 
-- Ajouter des cartes historiques et des images d'archives (avec mentions de source).
+- Ajouter des cartes historiques et des GIF/images d'archives de BAnQ (voir ci-dessus).
 - Enrichir les quiz et ajouter un calcul de score.
 - Ajouter des fiches PDF imprimables par période.
+- Compléter les encadrés « Façon de répondre » de la page Méthode pour chaque opération intellectuelle.
