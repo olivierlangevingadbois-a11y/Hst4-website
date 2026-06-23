@@ -21,10 +21,19 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // --- Quiz interactif ---
-  // Chaque bouton de réponse porte data-bon="true" si c'est la bonne réponse.
+  // Chaque bouton de réponse porte data-bon="true" si c'est la bonne réponse,
+  // et data-pourquoi="..." pour expliquer pourquoi la réponse est bonne ou non.
   document.querySelectorAll(".question").forEach(function (question) {
     const boutons = question.querySelectorAll(".options button");
     const retour = question.querySelector(".retour-quiz");
+    const feedback = question.querySelector(".feedback");
+    function bonBouton() {
+      let b = null;
+      boutons.forEach(function (x) {
+        if (x.getAttribute("data-bon") === "true") b = x;
+      });
+      return b;
+    }
     boutons.forEach(function (bouton) {
       bouton.addEventListener("click", function () {
         // Réinitialiser l'état de la question
@@ -32,18 +41,33 @@ document.addEventListener("DOMContentLoaded", function () {
           b.classList.remove("bon", "mauvais");
         });
         const estBon = bouton.getAttribute("data-bon") === "true";
+        const pourquoi = bouton.getAttribute("data-pourquoi");
         if (estBon) {
           bouton.classList.add("bon");
-          if (retour) retour.textContent = "✓ Bonne réponse !";
         } else {
           bouton.classList.add("mauvais");
-          // Met aussi en évidence la bonne réponse
-          boutons.forEach(function (b) {
-            if (b.getAttribute("data-bon") === "true") {
-              b.classList.add("bon");
-            }
-          });
-          if (retour) retour.textContent = "✗ Réponse à revoir — la bonne réponse est surlignée en vert.";
+          const bb = bonBouton();
+          if (bb) bb.classList.add("bon");
+        }
+
+        // Rétroaction détaillée (nouveau modèle)
+        if (feedback) {
+          feedback.classList.remove("bonne", "mauvaise");
+          feedback.classList.add("montre", estBon ? "bonne" : "mauvaise");
+          if (pourquoi) {
+            feedback.innerHTML = (estBon ? "✓ " : "✗ ") + pourquoi;
+          } else {
+            feedback.textContent = estBon
+              ? "✓ Bonne réponse !"
+              : "✗ Réponse à revoir — la bonne réponse est surlignée en vert.";
+          }
+        }
+
+        // Ancien modèle (compatibilité)
+        if (retour) {
+          retour.textContent = estBon
+            ? "✓ Bonne réponse !"
+            : "✗ Réponse à revoir — la bonne réponse est surlignée en vert.";
         }
       });
     });

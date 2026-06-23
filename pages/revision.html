@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Quiz de révision — Histoire du Québec et du Canada, Sec. 4</title>
-  <meta name="description" content="Quiz interactifs de révision sur les quatre périodes de l'histoire du Québec et du Canada de 1840 à aujourd'hui." />
+  <title>Révision par opérations intellectuelles — Histoire du Québec et du Canada, Sec. 4</title>
+  <meta name="description" content="Quiz interactifs organisés par opération intellectuelle, avec documents à analyser et rétroaction expliquant chaque réponse." />
   <link rel="stylesheet" href="../css/style.css" />
 </head>
 <body>
@@ -31,166 +31,155 @@
   <div class="entete-periode">
     <div class="contenu">
       <p class="fil-ariane"><a href="../index.html">Accueil</a> › Révision</p>
-      <h1>Quiz de révision</h1>
+      <h1>Révision par opérations intellectuelles</h1>
     </div>
   </div>
 
   <main class="contenu" style="padding-top:2.5rem; padding-bottom:3rem; max-width:820px;">
-    <p>Choisis une réponse pour chaque question : la bonne réponse s'affiche en vert. Idéal pour vérifier ta compréhension avant l'examen !</p>
+    <p>Chaque question pratique une <strong>opération intellectuelle</strong> (voir la <a href="methode.html">page Méthode</a>), souvent à partir d'un <strong>document</strong>. Choisis une réponse : une <strong>rétroaction</strong> t'explique pourquoi elle est bonne… ou pourquoi elle ne l'est pas.</p>
 
-    <section>
-      <h2>Période 1 — La formation du régime fédéral (1840–1896)</h2>
-      <div class="quiz">
-        <div class="question">
-          <p class="enonce">1. Quel document, adopté en 1840, unit le Bas-Canada et le Haut-Canada ?</p>
-          <ul class="options">
-            <li><button data-bon="true">L'Acte d'Union</button></li>
-            <li><button>L'Acte de Québec</button></li>
-            <li><button>L'Acte de l'Amérique du Nord britannique</button></li>
-            <li><button>La Proclamation royale</button></li>
-          </ul>
-          <p class="retour-quiz" role="status"></p>
-        </div>
+    <div class="quiz">
 
-        <div class="question">
-          <p class="enonce">2. En quelle année a lieu la Confédération canadienne ?</p>
-          <ul class="options">
-            <li><button>1848</button></li>
-            <li><button data-bon="true">1867</button></li>
-            <li><button>1885</button></li>
-            <li><button>1840</button></li>
-          </ul>
-          <p class="retour-quiz" role="status"></p>
-        </div>
-
-        <div class="question">
-          <p class="enonce">3. Quel chef métis est pendu en 1885 ?</p>
-          <ul class="options">
-            <li><button>George-Étienne Cartier</button></li>
-            <li><button>John A. Macdonald</button></li>
-            <li><button data-bon="true">Louis Riel</button></li>
-            <li><button>Wilfrid Laurier</button></li>
-          </ul>
-          <p class="retour-quiz" role="status"></p>
-        </div>
+      <!-- OI : Se situer dans le temps et l'espace -->
+      <div class="question">
+        <span class="oi-tag">OI · Se situer dans le temps et l'espace</span>
+        <p class="enonce">Observe la carte. À sa création en 1867, le Canada compte quatre provinces fondatrices. Laquelle ne fait <strong>pas</strong> partie de ces quatre provinces ?</p>
+        <figure class="q-doc">
+          <img loading="lazy" src="https://documents.recitus.qc.ca/components/com_gdwgestion/download.php?fileid=934" alt="Carte administrative du Canada" />
+          <figcaption>Carte administrative du Canada — Wikimedia Commons (domaine public), via RÉCITUS.</figcaption>
+        </figure>
+        <ul class="options">
+          <li><button data-bon="true" data-pourquoi="Exact : le Manitoba entre dans la Confédération en 1870, après la résistance de la rivière Rouge — donc après 1867.">Le Manitoba</button></li>
+          <li><button data-pourquoi="Le Québec est l'une des quatre provinces fondatrices de 1867 (avec l'Ontario, le Nouveau-Brunswick et la Nouvelle-Écosse).">Le Québec</button></li>
+          <li><button data-pourquoi="L'Ontario (l'ancien Canada-Ouest) est bien une province fondatrice de 1867.">L'Ontario</button></li>
+          <li><button data-pourquoi="La Nouvelle-Écosse fait partie des quatre provinces de 1867.">La Nouvelle-Écosse</button></li>
+        </ul>
+        <p class="feedback" role="status"></p>
       </div>
-    </section>
 
-    <section>
-      <h2>Période 2 — Nationalismes et autonomie (1896–1945)</h2>
-      <div class="quiz">
-        <div class="question">
-          <p class="enonce">1. Qui fonde le journal <em>Le Devoir</em> en 1910 ?</p>
-          <ul class="options">
-            <li><button>Maurice Duplessis</button></li>
-            <li><button data-bon="true">Henri Bourassa</button></li>
-            <li><button>Wilfrid Laurier</button></li>
-            <li><button>Lionel Groulx</button></li>
-          </ul>
-          <p class="retour-quiz" role="status"></p>
-        </div>
-
-        <div class="question">
-          <p class="enonce">2. Quel grave conflit politique éclate au Canada en 1917 ?</p>
-          <ul class="options">
-            <li><button>La crise d'Octobre</button></li>
-            <li><button>Le krach boursier</button></li>
-            <li><button data-bon="true">La crise de la conscription</button></li>
-            <li><button>La grève de l'amiante</button></li>
-          </ul>
-          <p class="retour-quiz" role="status"></p>
-        </div>
-
-        <div class="question">
-          <p class="enonce">3. En quelle année les femmes obtiennent-elles le droit de vote aux élections provinciales québécoises ?</p>
-          <ul class="options">
-            <li><button>1918</button></li>
-            <li><button>1929</button></li>
-            <li><button data-bon="true">1940</button></li>
-            <li><button>1960</button></li>
-          </ul>
-          <p class="retour-quiz" role="status"></p>
-        </div>
+      <!-- OI : Établir des faits -->
+      <div class="question">
+        <span class="oi-tag">OI · Établir des faits</span>
+        <p class="enonce">À partir de ce document et de tes connaissances, quel journal cet homme fonde-t-il en 1910 ?</p>
+        <figure class="q-doc">
+          <img loading="lazy" src="https://documents.recitus.qc.ca/components/com_gdwgestion/download.php?fileid=1062" alt="Portrait d'Henri Bourassa, 1910" />
+          <figcaption>Henri Bourassa (1910), Bibliothèque et Archives Canada, C-005110 (domaine public), via RÉCITUS.</figcaption>
+        </figure>
+        <ul class="options">
+          <li><button data-bon="true" data-pourquoi="Exact : Henri Bourassa fonde Le Devoir en 1910 pour défendre l'autonomie du Canada et les droits des Canadiens français.">Le Devoir</button></li>
+          <li><button data-pourquoi="La Presse existe déjà (fondée en 1884) et n'est pas l'œuvre de Bourassa.">La Presse</button></li>
+          <li><button data-pourquoi="Le Soleil est un quotidien de Québec, sans lien avec la fondation par Bourassa.">Le Soleil</button></li>
+          <li><button data-pourquoi="Un fait s'établit à partir du document : c'est Le Devoir, pas L'Action catholique, qui est associé à Bourassa en 1910.">L'Action catholique</button></li>
+        </ul>
+        <p class="feedback" role="status"></p>
       </div>
-    </section>
 
-    <section>
-      <h2>Période 3 — Modernisation et Révolution tranquille (1945–1980)</h2>
-      <div class="quiz">
-        <div class="question">
-          <p class="enonce">1. Quel slogan est associé au gouvernement de Jean Lesage en 1962 ?</p>
-          <ul class="options">
-            <li><button data-bon="true">« Maîtres chez nous »</button></li>
-            <li><button>« Vive le Québec libre »</button></li>
-            <li><button>« Le Québec aux Québécois »</button></li>
-            <li><button>« Égalité ou indépendance »</button></li>
-          </ul>
-          <p class="retour-quiz" role="status"></p>
-        </div>
-
-        <div class="question">
-          <p class="enonce">2. Quelle loi, adoptée en 1977, fait du français la langue officielle du Québec ?</p>
-          <ul class="options">
-            <li><button>La loi 22</button></li>
-            <li><button data-bon="true">La loi 101 (Charte de la langue française)</button></li>
-            <li><button>La loi 21</button></li>
-            <li><button>La Loi du cadenas</button></li>
-          </ul>
-          <p class="retour-quiz" role="status"></p>
-        </div>
-
-        <div class="question">
-          <p class="enonce">3. Quel est le résultat du référendum de 1980 ?</p>
-          <ul class="options">
-            <li><button>Le « Oui » l'emporte</button></li>
-            <li><button data-bon="true">Le « Non » l'emporte avec environ 60 %</button></li>
-            <li><button>Le « Non » l'emporte avec 50,6 %</button></li>
-            <li><button>Le référendum est annulé</button></li>
-          </ul>
-          <p class="retour-quiz" role="status"></p>
-        </div>
+      <!-- OI : Mettre en relation des faits -->
+      <div class="question">
+        <span class="oi-tag">OI · Mettre en relation des faits</span>
+        <p class="enonce">Quel ensemble d'éléments se rapporte tous à la <strong>Révolution tranquille</strong> ?</p>
+        <ul class="options">
+          <li><button data-bon="true" data-pourquoi="Exact : nationalisation de l'électricité (Hydro-Québec), création du ministère de l'Éducation et des cégeps appartiennent toutes à la Révolution tranquille (1960-1970).">Hydro-Québec, ministère de l'Éducation, cégeps</button></li>
+          <li><button data-pourquoi="Ces éléments (Acte d'Union, « rep by pop », LaFontaine) appartiennent à la période 1840-1867, pas à la Révolution tranquille.">Acte d'Union, « rep by pop », LaFontaine</button></li>
+          <li><button data-pourquoi="La conscription (1917) et le Statut de Westminster (1931) appartiennent à la période 1896-1945.">Conscription, Statut de Westminster</button></li>
+          <li><button data-pourquoi="L'ALÉNA (1994) et la loi 21 (2019) appartiennent au Québec contemporain, après 1980.">ALÉNA, loi 21</button></li>
+        </ul>
+        <p class="feedback" role="status"></p>
       </div>
-    </section>
 
-    <section>
-      <h2>Période 4 — Le Québec contemporain (1980 à aujourd'hui)</h2>
-      <div class="quiz">
-        <div class="question">
-          <p class="enonce">1. Pourquoi le Québec n'a-t-il pas signé la Constitution rapatriée en 1982 ?</p>
-          <ul class="options">
-            <li><button>Parce qu'il avait quitté le Canada</button></li>
-            <li><button data-bon="true">Parce que la réforme s'est faite sans son accord</button></li>
-            <li><button>Parce que Londres l'a refusé</button></li>
-            <li><button>Parce qu'il n'y avait pas de premier ministre</button></li>
-          </ul>
-          <p class="retour-quiz" role="status"></p>
-        </div>
-
-        <div class="question">
-          <p class="enonce">2. Quel est le résultat du référendum de 1995 ?</p>
-          <ul class="options">
-            <li><button>Le « Oui » l'emporte de justesse</button></li>
-            <li><button data-bon="true">Le « Non » l'emporte avec 50,6 %</button></li>
-            <li><button>Le « Non » l'emporte avec 60 %</button></li>
-            <li><button>Une égalité parfaite</button></li>
-          </ul>
-          <p class="retour-quiz" role="status"></p>
-        </div>
-
-        <div class="question">
-          <p class="enonce">3. Quel conflit de 1990 met en lumière les revendications territoriales autochtones ?</p>
-          <ul class="options">
-            <li><button>La crise d'Octobre</button></li>
-            <li><button data-bon="true">La crise d'Oka</button></li>
-            <li><button>La Paix des Braves</button></li>
-            <li><button>La grève de l'amiante</button></li>
-          </ul>
-          <p class="retour-quiz" role="status"></p>
-        </div>
+      <!-- OI : Déterminer des causes et des conséquences -->
+      <div class="question">
+        <span class="oi-tag">OI · Causes et conséquences</span>
+        <p class="enonce">Quelle est une <strong>cause</strong> de la crise de la conscription de 1917 ?</p>
+        <ul class="options">
+          <li><button data-bon="true" data-pourquoi="Exact : c'est l'imposition du service militaire obligatoire qui provoque la crise — c'est donc une cause.">L'imposition du service militaire obligatoire</button></li>
+          <li><button data-pourquoi="La division entre Canadiens français et anglais est plutôt une conséquence de la crise, pas sa cause.">La division entre Canadiens français et anglais</button></li>
+          <li><button data-pourquoi="Le krach boursier survient en 1929 : il ne peut pas causer une crise de 1917 (mauvais repère de temps).">Le krach boursier de 1929</button></li>
+          <li><button data-pourquoi="La loi 101 date de 1977 : aucun lien causal avec un événement de 1917.">L'adoption de la loi 101</button></li>
+        </ul>
+        <p class="feedback" role="status"></p>
       </div>
-    </section>
 
-    <p><a class="btn" href="../index.html">← Retour à l'accueil</a></p>
+      <!-- OI : Établir un lien de causalité -->
+      <div class="question">
+        <span class="oi-tag">OI · Établir un lien de causalité</span>
+        <p class="enonce">Ce document montre des chômeurs à Montréal en 1935. Quel <strong>enchaînement</strong> explique le mieux l'intervention accrue de l'État pendant la crise ?</p>
+        <figure class="q-doc">
+          <img loading="lazy" src="https://documents.recitus.qc.ca/components/com_gdwgestion/download.php?fileid=1196" alt="Chômeurs dormant sur des bancs de parc à Montréal, 1935" />
+          <figcaption>Chômeurs à Montréal (1935), F. R. Clark, Musée McCord, MP-1988.59.61 (CC BY-NC-ND), via RÉCITUS.</figcaption>
+        </figure>
+        <ul class="options">
+          <li><button data-bon="true" data-pourquoi="Exact : le chômage massif entraîne une charité débordée, ce qui entraîne les secours directs et les travaux publics de l'État.">Chômage massif → la charité ne suffit plus → secours directs de l'État</button></li>
+          <li><button data-pourquoi="L'ordre est inversé : pendant la crise, le chômage augmente, il ne diminue pas, et l'État intervient davantage, pas moins.">Prospérité → baisse du chômage → moins d'intervention de l'État</button></li>
+          <li><button data-pourquoi="La guerre relance l'économie après la crise : ce n'est pas l'enchaînement qui explique l'intervention de l'État pendant la crise.">Guerre mondiale → plein emploi → fin des secours</button></li>
+          <li><button data-pourquoi="Un lien de causalité doit relier les éléments (« cela entraîne… ») ; cette suite ne décrit pas la crise des années 1930.">Industrialisation → exode rural → émigration aux États-Unis</button></li>
+        </ul>
+        <p class="feedback" role="status"></p>
+      </div>
+
+      <!-- OI : Déterminer des changements et des continuités -->
+      <div class="question">
+        <span class="oi-tag">OI · Changements et continuités</span>
+        <p class="enonce">Entre 1901 et 1921, le milieu de vie de la population québécoise connaît surtout…</p>
+        <ul class="options">
+          <li><button data-bon="true" data-pourquoi="Exact : il y a changement — en 1921, pour la première fois, la majorité de la population vit en ville (urbanisation liée à l'industrialisation).">un changement : la population devient majoritairement urbaine</button></li>
+          <li><button data-pourquoi="C'est faux pour cette période : justement, la population cesse d'être majoritairement rurale vers 1921.">une continuité : la population reste majoritairement rurale</button></li>
+          <li><button data-pourquoi="Un retour à la terre est encouragé surtout pendant la crise des années 1930, et il ne renverse pas la tendance à l'urbanisation.">un changement : un retour massif à la campagne</button></li>
+          <li><button data-pourquoi="Pour répondre, il faut un repère de temps et des faits : ici, la tendance est claire et marque un changement, pas une absence de transformation.">aucune transformation notable</button></li>
+        </ul>
+        <p class="feedback" role="status"></p>
+      </div>
+
+      <!-- OI : Dégager des différences et des similitudes -->
+      <div class="question">
+        <span class="oi-tag">OI · Différences et similitudes</span>
+        <p class="enonce">Cette caricature présente un point de vue. Pour <strong>l'interpréter</strong> correctement, il faut surtout…</p>
+        <figure class="q-doc">
+          <img loading="lazy" src="https://documents.recitus.qc.ca/components/com_gdwgestion/download.php?fileid=1212" alt="Caricature politique de John Collins" />
+          <figcaption>Caricature de John Collins, Musée McCord, via RÉCITUS.</figcaption>
+        </figure>
+        <ul class="options">
+          <li><button data-bon="true" data-pourquoi="Exact : une caricature défend une opinion ; il faut se demander qui parle, quand et dans quel but pour en dégager le point de vue.">se demander qui parle, quand et dans quel but</button></li>
+          <li><button data-pourquoi="Compter les personnages ne révèle pas l'intention ni le point de vue défendu par la caricature.">compter le nombre de personnages</button></li>
+          <li><button data-pourquoi="Recopier la légende ne suffit pas : il faut interpréter le message et le point de vue.">recopier la légende mot à mot</button></li>
+          <li><button data-pourquoi="Ignorer le contexte empêche de comprendre l'opinion défendue : le contexte est essentiel.">ignorer le contexte historique</button></li>
+        </ul>
+        <p class="feedback" role="status"></p>
+      </div>
+
+      <!-- OI : Caractériser une période -->
+      <div class="question">
+        <span class="oi-tag">OI · Caractériser une période</span>
+        <p class="enonce">Ce document illustre la 2<sup>e</sup> phase d'industrialisation. Quel trait <strong>caractérise</strong> cette période au Québec (fin 19<sup>e</sup> – début 20<sup>e</sup> siècle) ?</p>
+        <figure class="q-doc">
+          <img loading="lazy" src="https://documents.recitus.qc.ca/components/com_gdwgestion/download.php?fileid=1050" alt="Salle de filature, Wabasso Cotton Mills, Trois-Rivières, vers 1913" />
+          <figcaption>Wabasso Cotton Mills, Trois-Rivières (v. 1913), Musée McCord, VIEW-4981 (CC BY-NC-ND), via RÉCITUS.</figcaption>
+        </figure>
+        <ul class="options">
+          <li><button data-bon="true" data-pourquoi="Exact : la 2e phase d'industrialisation se caractérise par l'arrivée de capitaux étrangers (surtout américains) et l'essor de secteurs comme les pâtes et papiers.">l'arrivée de capitaux américains et l'essor des pâtes et papiers</button></li>
+          <li><button data-pourquoi="La nationalisation de l'électricité (Hydro-Québec) appartient à la Révolution tranquille (années 1960), pas au début du 20e siècle.">la nationalisation de l'électricité</button></li>
+          <li><button data-pourquoi="Le rapatriement de la Constitution date de 1982 : mauvais repère de temps pour caractériser cette période.">le rapatriement de la Constitution</button></li>
+          <li><button data-pourquoi="Caractériser, c'est dégager les traits dominants de la période : ici l'industrie, pas un retour à une économie uniquement agricole.">le retour à une économie uniquement agricole</button></li>
+        </ul>
+        <p class="feedback" role="status"></p>
+      </div>
+
+      <!-- OI : Interpréter une réalité sociale -->
+      <div class="question">
+        <span class="oi-tag">OI · Interpréter une réalité sociale</span>
+        <p class="enonce">Dans une <strong>longue question</strong> qui demande d'expliquer un changement, quelle structure de réponse est attendue ?</p>
+        <ul class="options">
+          <li><button data-bon="true" data-pourquoi="Exact : « Un changement sur le plan… est… parce que… », en séparant par aspect et en appuyant chaque idée sur des faits tirés des documents.">« Un changement sur le plan… est… parce que… », avec des faits</button></li>
+          <li><button data-pourquoi="Une opinion personnelle non appuyée ne répond pas à une OI : il faut des faits et des documents.">donner son opinion personnelle</button></li>
+          <li><button data-pourquoi="Une date seule n'explique pas un changement ; il faut décrire le changement et sa cause.">indiquer seulement une date</button></li>
+          <li><button data-pourquoi="Recopier un document n'est pas interpréter : il faut organiser la réponse par aspect et expliquer.">recopier un document en entier</button></li>
+        </ul>
+        <p class="feedback" role="status"></p>
+      </div>
+
+    </div>
+
+    <p style="margin-top:2rem;"><a class="btn" href="methode.html">← Revoir les façons de répondre</a> &nbsp; <a class="btn btn-secondaire" style="border-color:var(--bleu); color:var(--bleu);" href="documents.html">Explorer les documents →</a></p>
   </main>
 
   <footer class="site-footer">
