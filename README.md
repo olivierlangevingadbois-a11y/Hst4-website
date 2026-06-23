@@ -38,8 +38,7 @@ interactifs.
 ├── js/
 │   └── main.js                  Menu mobile, quiz, année dynamique
 ├── images/
-│   ├── hero.svg                 Image de bannière
-│   └── placeholder-*.svg        Visuels de remplacement des figures
+│   └── hero.svg                 Image de bannière
 ├── data/
 │   └── repertoire_images.json   Source des 435 documents (RÉCITUS)
 └── tools/
@@ -72,28 +71,14 @@ python3 -m http.server 8000
 # puis ouvrir http://localhost:8000
 ```
 
-## Insérer des images de BAnQ (domaine public)
+## Illustrations des pages de notes
 
-Chaque page de période contient des emplacements `<figure>` prêts à recevoir une
-image, signalés par un commentaire HTML `IMAGE À INSÉRER`. Tant qu'aucune image
-n'est ajoutée, un visuel de remplacement (`images/placeholder-paysage.svg` ou
-`placeholder-portrait.svg`) s'affiche.
+Chaque page de notes (`pages/periode-*.html`) contient des `<figure>` illustrées par
+des images de RÉCITUS, avec **légende et mention de source** (auteur, dépôt d'archives
+et licence) dans le `<figcaption>`. Pour remplacer ou ajouter une image, modifie le
+`src` (un lien `documents.recitus.qc.ca/...?fileid=NNNN`) et la légende.
 
-Pour ajouter une vraie image depuis
-[BAnQ — documents du domaine public](https://numerique.banq.qc.ca/collections/documents-du-domaine-public) :
-
-1. Trouve le document voulu sur le portail de BAnQ et **télécharge l'image**
-   (vérifie qu'elle est bien dans le domaine public).
-2. **Dépose le fichier** dans le dossier `images/` (ex. `images/p1-confederation.jpg`).
-3. Dans la page concernée, remplace le `src` du placeholder :
-   ```html
-   <img src="../images/p1-confederation.jpg" alt="..." />
-   ```
-4. **Complète la légende** et l'attribution dans `<figcaption>` : remplace `cote XXXXX`
-   par la cote réelle et ajuste le texte.
-
-> ⚠️ Toujours **créditer la source** (BAnQ + cote) et confirmer le statut « domaine
-> public » de chaque document avant publication.
+> ⚠️ Toujours **créditer la source** et respecter la **licence** de chaque document.
 
 ## Pistes d'amélioration
 
