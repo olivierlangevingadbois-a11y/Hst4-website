@@ -1,0 +1,672 @@
+/* ===================================================================
+   Histoire du Québec et du Canada — Secondaire 4
+   Feuille de style principale
+   =================================================================== */
+
+:root {
+  --bleu-fonce: #0b3d59;
+  --bleu: #14618c;
+  --bleu-clair: #e8f1f7;
+  --or: #c9a227;
+  --rouge: #9b2226;
+  --gris-fonce: #2b2b2b;
+  --gris: #5a5a5a;
+  --gris-clair: #f4f4f4;
+  --blanc: #ffffff;
+  --ombre: 0 2px 10px rgba(0, 0, 0, 0.08);
+  --rayon: 10px;
+  --largeur-max: 1100px;
+  --transition: 0.2s ease;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--gris-fonce);
+  line-height: 1.65;
+  background: var(--blanc);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--bleu);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+a:hover {
+  color: var(--bleu-fonce);
+  text-decoration: underline;
+}
+
+h1, h2, h3, h4 {
+  line-height: 1.25;
+  color: var(--bleu-fonce);
+}
+
+.contenu {
+  width: 100%;
+  max-width: var(--largeur-max);
+  margin: 0 auto;
+  padding: 0 1.2rem;
+}
+
+/* ---------- En-tête et navigation ---------- */
+.site-header {
+  background: var(--bleu-fonce);
+  color: var(--blanc);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--ombre);
+}
+
+.barre-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.7rem 1.2rem;
+  max-width: var(--largeur-max);
+  margin: 0 auto;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--blanc);
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.logo:hover {
+  text-decoration: none;
+  color: var(--or);
+}
+
+.logo .ecusson {
+  background: var(--or);
+  color: var(--bleu-fonce);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  font-size: 0.95rem;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 0.3rem;
+  align-items: center;
+}
+
+.menu a {
+  color: var(--blanc);
+  padding: 0.5rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  display: block;
+}
+
+.menu a:hover,
+.menu a.actif {
+  background: var(--bleu);
+  text-decoration: none;
+  color: var(--blanc);
+}
+
+.btn-menu {
+  display: none;
+  background: none;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  color: var(--blanc);
+  font-size: 1.4rem;
+  border-radius: 6px;
+  padding: 0.2rem 0.6rem;
+  cursor: pointer;
+}
+
+/* ---------- Bannière / hero ---------- */
+.hero {
+  background: linear-gradient(135deg, rgba(11, 61, 89, 0.92), rgba(20, 97, 140, 0.85)),
+    url("../images/hero.svg") center/cover no-repeat;
+  color: var(--blanc);
+  padding: 4rem 1.2rem;
+  text-align: center;
+}
+
+.hero h1 {
+  color: var(--blanc);
+  font-size: 2.4rem;
+  margin-bottom: 0.6rem;
+}
+
+.hero p {
+  font-size: 1.15rem;
+  max-width: 720px;
+  margin: 0 auto 1.5rem;
+  opacity: 0.95;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--or);
+  color: var(--bleu-fonce);
+  font-weight: 700;
+  padding: 0.7rem 1.4rem;
+  border-radius: 8px;
+  transition: transform var(--transition), background var(--transition);
+}
+
+.btn:hover {
+  background: #d9b22f;
+  color: var(--bleu-fonce);
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+.btn-secondaire {
+  background: transparent;
+  color: var(--blanc);
+  border: 2px solid var(--blanc);
+  margin-left: 0.6rem;
+}
+
+.btn-secondaire:hover {
+  background: var(--blanc);
+  color: var(--bleu-fonce);
+}
+
+/* ---------- Sections ---------- */
+section {
+  padding: 3rem 0;
+}
+
+.section-titre {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.section-titre h2 {
+  font-size: 1.9rem;
+  display: inline-block;
+  padding-bottom: 0.4rem;
+  border-bottom: 4px solid var(--or);
+}
+
+.section-titre p {
+  color: var(--gris);
+  margin-top: 0.6rem;
+}
+
+.bg-clair {
+  background: var(--gris-clair);
+}
+
+/* ---------- Grille de cartes de périodes ---------- */
+.grille-periodes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.4rem;
+}
+
+.carte-periode {
+  background: var(--blanc);
+  border-radius: var(--rayon);
+  box-shadow: var(--ombre);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border-top: 5px solid var(--bleu);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.carte-periode:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.14);
+}
+
+.carte-periode .numero {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--or);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.carte-periode .corps {
+  padding: 1.4rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.carte-periode h3 {
+  margin: 0.3rem 0 0.5rem;
+  font-size: 1.2rem;
+}
+
+.carte-periode .annees {
+  background: var(--bleu-clair);
+  color: var(--bleu-fonce);
+  font-weight: 700;
+  border-radius: 20px;
+  padding: 0.1rem 0.7rem;
+  font-size: 0.85rem;
+  align-self: flex-start;
+  margin-bottom: 0.7rem;
+}
+
+.carte-periode p {
+  color: var(--gris);
+  font-size: 0.95rem;
+  flex: 1;
+}
+
+.carte-periode .lien-carte {
+  margin-top: 1rem;
+  font-weight: 700;
+}
+
+/* ---------- Page de période ---------- */
+.entete-periode {
+  background: var(--bleu);
+  color: var(--blanc);
+  padding: 2.5rem 1.2rem;
+}
+
+.entete-periode .contenu {
+  max-width: var(--largeur-max);
+}
+
+.entete-periode .annees {
+  display: inline-block;
+  background: var(--or);
+  color: var(--bleu-fonce);
+  font-weight: 700;
+  border-radius: 20px;
+  padding: 0.15rem 0.9rem;
+  margin-bottom: 0.6rem;
+}
+
+.entete-periode h1 {
+  color: var(--blanc);
+  font-size: 2rem;
+}
+
+.fil-ariane {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 0.8rem;
+}
+
+.fil-ariane a {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Mise en page contenu + sommaire latéral */
+.layout-cours {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 2.2rem;
+  align-items: start;
+  padding-top: 2.5rem;
+  padding-bottom: 3rem;
+}
+
+.sommaire {
+  position: sticky;
+  top: 80px;
+  background: var(--gris-clair);
+  border-radius: var(--rayon);
+  padding: 1.2rem;
+  font-size: 0.92rem;
+}
+
+.sommaire h4 {
+  margin-bottom: 0.6rem;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  color: var(--gris);
+}
+
+.sommaire ol {
+  list-style: none;
+  counter-reset: item;
+}
+
+.sommaire li {
+  counter-increment: item;
+  margin-bottom: 0.4rem;
+}
+
+.sommaire li a::before {
+  content: counter(item) ". ";
+  color: var(--or);
+  font-weight: 700;
+}
+
+.article-cours h2 {
+  font-size: 1.5rem;
+  margin: 2rem 0 0.8rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 2px solid var(--bleu-clair);
+}
+
+.article-cours h2:first-child {
+  margin-top: 0;
+}
+
+.article-cours h3 {
+  font-size: 1.15rem;
+  margin: 1.4rem 0 0.5rem;
+  color: var(--bleu);
+}
+
+.article-cours p {
+  margin-bottom: 1rem;
+}
+
+.article-cours ul,
+.article-cours ol {
+  margin: 0 0 1rem 1.4rem;
+}
+
+.article-cours li {
+  margin-bottom: 0.4rem;
+}
+
+/* Encadrés pédagogiques */
+.encadre {
+  border-radius: var(--rayon);
+  padding: 1.1rem 1.3rem;
+  margin: 1.4rem 0;
+  border-left: 5px solid var(--bleu);
+  background: var(--bleu-clair);
+}
+
+.encadre.concept {
+  border-left-color: var(--or);
+  background: #fdf6e3;
+}
+
+.encadre.attention {
+  border-left-color: var(--rouge);
+  background: #fbeaea;
+}
+
+.encadre .titre-encadre {
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.3rem;
+  color: var(--bleu-fonce);
+}
+
+/* Tableau */
+.tableau-wrap {
+  overflow-x: auto;
+  margin: 1.4rem 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  min-width: 480px;
+}
+
+table caption {
+  text-align: left;
+  font-weight: 700;
+  color: var(--bleu-fonce);
+  margin-bottom: 0.5rem;
+}
+
+th, td {
+  border: 1px solid #d8d8d8;
+  padding: 0.6rem 0.8rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+thead th {
+  background: var(--bleu-fonce);
+  color: var(--blanc);
+}
+
+tbody tr:nth-child(even) {
+  background: var(--gris-clair);
+}
+
+/* Ligne du temps */
+.ligne-temps {
+  list-style: none;
+  margin: 1.5rem 0;
+  padding-left: 1.2rem;
+  border-left: 3px solid var(--bleu);
+}
+
+.ligne-temps li {
+  position: relative;
+  padding: 0 0 1.1rem 1.4rem;
+}
+
+.ligne-temps li::before {
+  content: "";
+  position: absolute;
+  left: -1.62rem;
+  top: 0.35rem;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--or);
+  border: 3px solid var(--blanc);
+  box-shadow: 0 0 0 2px var(--bleu);
+}
+
+.ligne-temps .date {
+  font-weight: 700;
+  color: var(--bleu-fonce);
+  margin-right: 0.4rem;
+}
+
+/* Navigation entre périodes */
+.nav-periodes {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 2.5rem 0 1rem;
+  flex-wrap: wrap;
+}
+
+.nav-periodes a {
+  background: var(--gris-clair);
+  border-radius: var(--rayon);
+  padding: 0.9rem 1.2rem;
+  flex: 1;
+  min-width: 220px;
+}
+
+.nav-periodes a:hover {
+  background: var(--bleu-clair);
+  text-decoration: none;
+}
+
+.nav-periodes .sens {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--gris);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.nav-periodes .suivant {
+  text-align: right;
+}
+
+/* ---------- Quiz / révision ---------- */
+.quiz {
+  background: var(--blanc);
+  border-radius: var(--rayon);
+  box-shadow: var(--ombre);
+  padding: 1.6rem;
+  margin: 1.5rem 0;
+}
+
+.question {
+  margin-bottom: 1.4rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid #eee;
+}
+
+.question:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.question p.enonce {
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+
+.options {
+  list-style: none;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.options button {
+  width: 100%;
+  text-align: left;
+  background: var(--gris-clair);
+  border: 2px solid transparent;
+  border-radius: 8px;
+  padding: 0.6rem 0.9rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: var(--transition);
+  font-family: inherit;
+}
+
+.options button:hover {
+  border-color: var(--bleu);
+}
+
+.options button.bon {
+  background: #d8f0dd;
+  border-color: #2e7d32;
+  color: #1b5e20;
+  font-weight: 700;
+}
+
+.options button.mauvais {
+  background: #fbeaea;
+  border-color: var(--rouge);
+  color: var(--rouge);
+}
+
+.retour-quiz {
+  margin-top: 0.6rem;
+  font-size: 0.9rem;
+  color: var(--gris);
+  min-height: 1.2rem;
+}
+
+/* ---------- Pied de page ---------- */
+.site-footer {
+  background: var(--bleu-fonce);
+  color: rgba(255, 255, 255, 0.85);
+  padding: 2.5rem 1.2rem 1.5rem;
+  margin-top: 2rem;
+}
+
+.footer-grille {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.6rem;
+  max-width: var(--largeur-max);
+  margin: 0 auto;
+}
+
+.site-footer h4 {
+  color: var(--or);
+  margin-bottom: 0.6rem;
+}
+
+.site-footer ul {
+  list-style: none;
+}
+
+.site-footer a {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.site-footer a:hover {
+  color: var(--blanc);
+}
+
+.copyright {
+  text-align: center;
+  margin-top: 1.8rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 0.85rem;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 860px) {
+  .layout-cours {
+    grid-template-columns: 1fr;
+  }
+  .sommaire {
+    position: static;
+  }
+}
+
+@media (max-width: 720px) {
+  .btn-menu {
+    display: block;
+  }
+  .menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: var(--bleu-fonce);
+    padding: 0.6rem 1.2rem 1rem;
+    gap: 0.2rem;
+  }
+  .menu.ouvert {
+    display: flex;
+  }
+  .menu a {
+    padding: 0.7rem 0.6rem;
+  }
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+  .btn-secondaire {
+    margin-left: 0;
+    margin-top: 0.6rem;
+  }
+}
