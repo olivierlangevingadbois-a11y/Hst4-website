@@ -41,7 +41,7 @@
   la « façon de répondre » de la page Méthode (recettes : « est : », « parce que : »,
   « cela entraîne », « tandis que », « en accord/désaccord concernant », etc.),
   organisées en 9 séries avec leur propre tableau de bord.
-- [ ] **Étape 9 — Matière des chapitres selon le programme ministériel**
+- [x] **Étape 9 — Matière des chapitres selon le programme ministériel**
   (`pages/periode-1..4.html`) : combler les manques par rapport aux précisions des
   connaissances du programme HQC de 4e secondaire (voir liste des manques dans le
   commit de l'étape).
