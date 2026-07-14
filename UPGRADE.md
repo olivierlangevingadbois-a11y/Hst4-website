@@ -11,7 +11,7 @@
 ## État d'avancement
 
 - [x] **Étape 0 — Ce plan** : commit du plan de mise à niveau.
-- [ ] **Étape 1 — Moteur de quiz v2** (`js/main.js`, `css/style.css`, `pages/revision.html`) :
+- [x] **Étape 1 — Moteur de quiz v2** (`js/main.js`, `css/style.css`, `pages/revision.html`) :
   compteur de score par série, barre de progression, mélange des choix à l'affichage,
   bouton « Recommencer », meilleur score conservé (`localStorage`), un seul essai
   compté par question.
