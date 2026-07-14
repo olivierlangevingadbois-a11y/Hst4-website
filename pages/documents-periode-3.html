@@ -39,6 +39,20 @@
   <main class="contenu" style="padding-top:2rem; padding-bottom:3rem;">
     <p>141 documents répartis en 5 dossiers. Clique sur une image pour l'afficher en grand format (source d'origine&nbsp;: RÉCITUS, Service national du RÉCIT de l'univers social, et partenaires). Tu peux aussi consulter les <a href="periode-3.html">notes de cours de cette période</a>.</p>
 
+    <div class="barre-recherche" role="search">
+      <input type="search" id="recherche-docs" placeholder="Rechercher un document (mots-clés)…"
+             aria-label="Rechercher un document par mots-clés" />
+      <select id="filtre-dossier" aria-label="Filtrer par dossier">
+        <option value="">Tous les dossiers</option>
+        <option value="interpr-ter-une-caricature">Interpréter une caricature</option>
+        <option value="situation-des-autochtones-1945-1980">Situation des Autochtones 1945-1980</option>
+        <option value="l-tat-et-duplessis">L&#x27;État et Duplessis</option>
+        <option value="autres-documents">Autres documents</option>
+        <option value="documents-d-analyse-juin-2025">Documents d&#x27;analyse — juin 2025</option>
+      </select>
+      <span class="compte-resultats" role="status"></span>
+    </div>
+
     <nav class="encadre" aria-label="Liste des dossiers">
       <span class="titre-encadre">Dossiers de cette période</span>
       <ul class="liste-dossiers">

@@ -39,6 +39,21 @@
   <main class="contenu" style="padding-top:2rem; padding-bottom:3rem;">
     <p>87 documents répartis en 6 dossiers. Clique sur une image pour l'afficher en grand format (source d'origine&nbsp;: RÉCITUS, Service national du RÉCIT de l'univers social, et partenaires). Tu peux aussi consulter les <a href="periode-4.html">notes de cours de cette période</a>.</p>
 
+    <div class="barre-recherche" role="search">
+      <input type="search" id="recherche-docs" placeholder="Rechercher un document (mots-clés)…"
+             aria-label="Rechercher un document par mots-clés" />
+      <select id="filtre-dossier" aria-label="Filtrer par dossier">
+        <option value="">Tous les dossiers</option>
+        <option value="v-nements-marquants-1980-nos-jours">Évènements marquants - 1980 à nos jours</option>
+        <option value="d-fis-d-mographiques-depuis-1980">Défis démographiques depuis 1980</option>
+        <option value="r-vision-mouvements-de-pens-e">Révision - Mouvements de pensée</option>
+        <option value="montr-al-cosmopolite">Montréal cosmopolite</option>
+        <option value="autres-documents">Autres documents</option>
+        <option value="documents-d-analyse-juin-2025">Documents d&#x27;analyse — juin 2025</option>
+      </select>
+      <span class="compte-resultats" role="status"></span>
+    </div>
+
     <nav class="encadre" aria-label="Liste des dossiers">
       <span class="titre-encadre">Dossiers de cette période</span>
       <ul class="liste-dossiers">

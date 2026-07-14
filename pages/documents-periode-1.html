@@ -39,6 +39,21 @@
   <main class="contenu" style="padding-top:2rem; padding-bottom:3rem;">
     <p>140 documents répartis en 6 dossiers. Clique sur une image pour l'afficher en grand format (source d'origine&nbsp;: RÉCITUS, Service national du RÉCIT de l'univers social, et partenaires). Tu peux aussi consulter les <a href="periode-1.html">notes de cours de cette période</a>.</p>
 
+    <div class="barre-recherche" role="search">
+      <input type="search" id="recherche-docs" placeholder="Rechercher un document (mots-clés)…"
+             aria-label="Rechercher un document par mots-clés" />
+      <select id="filtre-dossier" aria-label="Filtrer par dossier">
+        <option value="">Tous les dossiers</option>
+        <option value="la-production-industrielle">La production industrielle</option>
+        <option value="points-de-vue-ultramontains-et-anticl-ricaux">Points de vue ultramontains et anticléricaux</option>
+        <option value="id-ologies-dominantes-1840-1896">Idéologies dominantes (1840-1896)</option>
+        <option value="la-politique-nationale">La Politique nationale</option>
+        <option value="autres-documents">Autres documents</option>
+        <option value="documents-d-analyse-juin-2025">Documents d&#x27;analyse — juin 2025</option>
+      </select>
+      <span class="compte-resultats" role="status"></span>
+    </div>
+
     <nav class="encadre" aria-label="Liste des dossiers">
       <span class="titre-encadre">Dossiers de cette période</span>
       <ul class="liste-dossiers">

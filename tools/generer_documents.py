@@ -118,6 +118,9 @@ for pname, pnum, ptitle, pyears in PERIODS:
             order.append(dos)
         groups[dos].append(e)
 
+    dossier_options = "\n".join(
+        f'        <option value="{slug(dos)}">{esc(dos)}</option>' for dos in order
+    )
     out = [header(f"Dossiers documentaires — Période {pnum} ({pyears})",
                   f"Banque de documents (images, gravures, caricatures, vidéos) de la période {pyears} pour l'analyse en classe.",
                   "documents")]
@@ -131,6 +134,16 @@ for pname, pnum, ptitle, pyears in PERIODS:
 
   <main class="contenu" style="padding-top:2rem; padding-bottom:3rem;">
     <p>{len(entries)} documents répartis en {len(order)} dossiers. Clique sur une image pour l'afficher en grand format (source d'origine&nbsp;: RÉCITUS, Service national du RÉCIT de l'univers social, et partenaires). Tu peux aussi consulter les <a href="periode-{pnum}.html">notes de cours de cette période</a>.</p>
+
+    <div class="barre-recherche" role="search">
+      <input type="search" id="recherche-docs" placeholder="Rechercher un document (mots-clés)…"
+             aria-label="Rechercher un document par mots-clés" />
+      <select id="filtre-dossier" aria-label="Filtrer par dossier">
+        <option value="">Tous les dossiers</option>
+{dossier_options}
+      </select>
+      <span class="compte-resultats" role="status"></span>
+    </div>
 
     <nav class="encadre" aria-label="Liste des dossiers">
       <span class="titre-encadre">Dossiers de cette période</span>

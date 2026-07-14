@@ -15,7 +15,7 @@
   compteur de score par série, barre de progression, mélange des choix à l'affichage,
   bouton « Recommencer », meilleur score conservé (`localStorage`), un seul essai
   compté par question.
-- [ ] **Étape 2 — Banque de documents : recherche + visionneuse**
+- [x] **Étape 2 — Banque de documents : recherche + visionneuse**
   (`tools/generer_documents.py` puis régénération, `js/main.js`, `css/style.css`) :
   champ de recherche par mots-clés + filtre par dossier sur chaque page de période;
   visionneuse (lightbox) avec légende et navigation clavier au lieu d'ouvrir

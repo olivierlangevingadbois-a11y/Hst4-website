@@ -180,4 +180,168 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".question").forEach(function (q) {
     if (!q.closest(".quiz")) brancherQuestion(q, null);
   });
+
+  // --- Recherche dans la banque de documents ---
+  // Filtre les cartes par mots-clés (sans tenir compte des accents) et par
+  // dossier; les sections vides sont masquées.
+  const champRecherche = document.getElementById("recherche-docs");
+  const filtreDossier = document.getElementById("filtre-dossier");
+  if (champRecherche) {
+    const compte = document.querySelector(".compte-resultats");
+
+    function normaliser(s) {
+      return s
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "");
+    }
+
+    // Index construit une seule fois : texte normalisé de chaque carte
+    const cartes = Array.from(document.querySelectorAll(".doc-carte")).map(function (carte) {
+      return {
+        el: carte,
+        section: carte.closest(".dossier"),
+        texte: normaliser(carte.textContent),
+      };
+    });
+
+    function filtrer() {
+      const mots = normaliser(champRecherche.value).split(/\s+/).filter(Boolean);
+      const dossier = filtreDossier ? filtreDossier.value : "";
+      let visibles = 0;
+      cartes.forEach(function (c) {
+        const okDossier = !dossier || (c.section && c.section.id === dossier);
+        const okMots = mots.every(function (m) {
+          return c.texte.indexOf(m) !== -1;
+        });
+        const ok = okDossier && okMots;
+        c.el.hidden = !ok;
+        if (ok) visibles++;
+      });
+      document.querySelectorAll(".dossier").forEach(function (section) {
+        section.hidden = !section.querySelector(".doc-carte:not([hidden])");
+      });
+      if (compte) {
+        compte.textContent =
+          mots.length || dossier
+            ? visibles + " document(s) affiché(s)"
+            : "";
+      }
+    }
+
+    champRecherche.addEventListener("input", filtrer);
+    if (filtreDossier) filtreDossier.addEventListener("change", filtrer);
+  }
+
+  // --- Visionneuse d'images (lightbox) ---
+  // Ouvre les images de la banque dans une visionneuse plein écran avec
+  // légende et navigation clavier; les vidéos continuent d'ouvrir leur lien.
+  const vignettes = Array.from(
+    document.querySelectorAll(".doc-carte:not(.video) .vignette, figure.q-doc img")
+  );
+  if (vignettes.length) {
+    let visionneuse = null;
+    let indexCourant = 0;
+
+    function infosVignette(v) {
+      if (v.matches("figure.q-doc img")) {
+        const fig = v.closest("figure");
+        const cap = fig.querySelector("figcaption");
+        return { src: v.src, titre: v.alt, source: cap ? cap.textContent : "" };
+      }
+      const carte = v.closest(".doc-carte");
+      const titre = carte.querySelector("h4");
+      const source = carte.querySelector(".doc-source");
+      return {
+        src: v.getAttribute("href"),
+        titre: titre ? titre.textContent : "",
+        source: source ? source.textContent : "",
+      };
+    }
+
+    function visibles() {
+      return vignettes.filter(function (v) {
+        const carte = v.closest(".doc-carte");
+        return !carte || !carte.hidden;
+      });
+    }
+
+    function construire() {
+      visionneuse = document.createElement("div");
+      visionneuse.className = "visionneuse";
+      visionneuse.setAttribute("role", "dialog");
+      visionneuse.setAttribute("aria-label", "Visionneuse de document");
+      visionneuse.innerHTML =
+        '<button type="button" class="v-fermer" aria-label="Fermer (Échap)">×</button>' +
+        '<button type="button" class="v-prec" aria-label="Document précédent">‹</button>' +
+        '<figure><img alt="" /><figcaption></figcaption></figure>' +
+        '<button type="button" class="v-suiv" aria-label="Document suivant">›</button>';
+      document.body.appendChild(visionneuse);
+      visionneuse.querySelector(".v-fermer").addEventListener("click", fermer);
+      visionneuse.querySelector(".v-prec").addEventListener("click", function () {
+        naviguer(-1);
+      });
+      visionneuse.querySelector(".v-suiv").addEventListener("click", function () {
+        naviguer(1);
+      });
+      visionneuse.addEventListener("click", function (e) {
+        if (e.target === visionneuse) fermer();
+      });
+      document.addEventListener("keydown", function (e) {
+        if (!visionneuse.classList.contains("ouverte")) return;
+        if (e.key === "Escape") fermer();
+        if (e.key === "ArrowLeft") naviguer(-1);
+        if (e.key === "ArrowRight") naviguer(1);
+      });
+    }
+
+    function afficher(v) {
+      const infos = infosVignette(v);
+      const img = visionneuse.querySelector("img");
+      img.src = infos.src;
+      img.alt = infos.titre;
+      visionneuse.querySelector("figcaption").innerHTML =
+        "<strong>" + infos.titre + "</strong><br>" + infos.source;
+      const liste = visibles();
+      indexCourant = liste.indexOf(v);
+      visionneuse.querySelector(".v-prec").disabled = indexCourant <= 0;
+      visionneuse.querySelector(".v-suiv").disabled = indexCourant >= liste.length - 1;
+    }
+
+    function naviguer(sens) {
+      const liste = visibles();
+      const suivant = liste[indexCourant + sens];
+      if (suivant) afficher(suivant);
+    }
+
+    function ouvrir(v) {
+      if (!visionneuse) construire();
+      afficher(v);
+      visionneuse.classList.add("ouverte");
+      document.body.style.overflow = "hidden";
+      visionneuse.querySelector(".v-fermer").focus();
+    }
+
+    function fermer() {
+      visionneuse.classList.remove("ouverte");
+      document.body.style.overflow = "";
+    }
+
+    vignettes.forEach(function (v) {
+      v.addEventListener("click", function (e) {
+        e.preventDefault();
+        ouvrir(v);
+      });
+      if (v.matches("img")) {
+        v.style.cursor = "zoom-in";
+        v.setAttribute("tabindex", "0");
+        v.addEventListener("keydown", function (e) {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            ouvrir(v);
+          }
+        });
+      }
+    });
+  }
 });
