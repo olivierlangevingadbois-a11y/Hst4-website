@@ -33,7 +33,7 @@
   (générateur inclus). `robots.txt` bloque volontairement l'indexation tant que
   le site doit rester discret (voir le fichier pour le rouvrir); pas de sitemap
   d'ici là.
-- [ ] **Étape 7 — Contrôle qualité final** : vérification des liens internes,
+- [x] **Étape 7 — Contrôle qualité final** : vérification des liens internes,
   imbrication HTML, poids des images; mise à jour de la description du PR #1.
 
 ## Notes de contexte
