@@ -29,8 +29,10 @@
 - [x] **Étape 5 — Accessibilité et confort** (`css/style.css`, toutes pages) :
   lien d'évitement « Aller au contenu », états `:focus-visible`,
   `prefers-reduced-motion`, contrastes vérifiés, favicon SVG, page `404.html`.
-- [ ] **Étape 6 — SEO / partage** : balises Open Graph + description sur toutes les
-  pages (générateur inclus), `robots.txt`, `sitemap.xml`.
+- [x] **Étape 6 — SEO / partage** : balises Open Graph sur toutes les pages
+  (générateur inclus). `robots.txt` bloque volontairement l'indexation tant que
+  le site doit rester discret (voir le fichier pour le rouvrir); pas de sitemap
+  d'ici là.
 - [ ] **Étape 7 — Contrôle qualité final** : vérification des liens internes,
   imbrication HTML, poids des images; mise à jour de la description du PR #1.
 

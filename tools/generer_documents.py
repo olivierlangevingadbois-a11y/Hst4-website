@@ -44,6 +44,10 @@ def header(title, desc, active):
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{esc(title)}</title>
   <meta name="description" content="{esc(desc)}" />
+  <meta property="og:title" content="{esc(title)}" />
+  <meta property="og:description" content="{esc(desc)}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_CA" />
   <link rel="icon" type="image/svg+xml" href="../images/favicon.svg" />
   <link rel="stylesheet" href="../css/style.css" />
 </head>

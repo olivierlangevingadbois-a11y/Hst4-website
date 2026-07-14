@@ -1,0 +1,5 @@
+# Site en préparation : indexation refusée pour l'instant.
+# Pour rouvrir aux moteurs de recherche, remplacer « Disallow: / » par « Disallow: »
+# (et ajouter un sitemap au besoin).
+User-agent: *
+Disallow: /
