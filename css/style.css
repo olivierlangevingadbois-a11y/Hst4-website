@@ -1473,3 +1473,42 @@ tbody tr:nth-child(even) {
     color: #555;
   }
 }
+
+/* ---------- Accessibilité ---------- */
+.evitement {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 300;
+  background: var(--or);
+  color: var(--bleu-fonce);
+  font-weight: 700;
+  padding: 0.7rem 1.2rem;
+  border-radius: 0 0 8px 0;
+}
+
+.evitement:focus {
+  left: 0;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+summary:focus-visible {
+  outline: 3px solid var(--or);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}

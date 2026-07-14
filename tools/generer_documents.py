@@ -44,9 +44,11 @@ def header(title, desc, active):
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{esc(title)}</title>
   <meta name="description" content="{esc(desc)}" />
+  <link rel="icon" type="image/svg+xml" href="../images/favicon.svg" />
   <link rel="stylesheet" href="../css/style.css" />
 </head>
 <body>
+  <a class="evitement" href="#contenu-principal">Aller au contenu</a>
   <header class="site-header">
     <nav class="barre-nav" aria-label="Navigation principale">
       <a href="../index.html" class="logo">
@@ -132,7 +134,7 @@ for pname, pnum, ptitle, pyears in PERIODS:
     </div>
   </div>
 
-  <main class="contenu" style="padding-top:2rem; padding-bottom:3rem;">
+  <main id="contenu-principal" class="contenu" style="padding-top:2rem; padding-bottom:3rem;">
     <p>{len(entries)} documents répartis en {len(order)} dossiers. Clique sur une image pour l'afficher en grand format (source d'origine&nbsp;: RÉCITUS, Service national du RÉCIT de l'univers social, et partenaires). Tu peux aussi consulter les <a href="periode-{pnum}.html">notes de cours de cette période</a>.</p>
 
     <div class="barre-recherche" role="search">
@@ -188,7 +190,7 @@ hub.append("""  <div class="entete-periode">
     </div>
   </div>
 
-  <main class="contenu" style="padding-top:2.5rem; padding-bottom:3rem;">
+  <main id="contenu-principal" class="contenu" style="padding-top:2.5rem; padding-bottom:3rem;">
     <p>Une banque de documents historiques (photos, gravures, caricatures, cartes et vidéos) organisée par période, pour pratiquer l'analyse de documents. Les images proviennent de RÉCITUS (Service national du RÉCIT de l'univers social) et de ses partenaires; clique sur une image pour l'afficher en grand format.</p>
 
     <div class="grille-periodes">""")

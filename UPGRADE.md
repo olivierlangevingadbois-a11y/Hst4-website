@@ -26,7 +26,7 @@
 - [x] **Étape 4 — Maillage des pages de période** (`pages/periode-*.html`) :
   encarts « Pratique cette période » (liens vers documents filtrés + quiz),
   styles d'impression pour réviser sur papier.
-- [ ] **Étape 5 — Accessibilité et confort** (`css/style.css`, toutes pages) :
+- [x] **Étape 5 — Accessibilité et confort** (`css/style.css`, toutes pages) :
   lien d'évitement « Aller au contenu », états `:focus-visible`,
   `prefers-reduced-motion`, contrastes vérifiés, favicon SVG, page `404.html`.
 - [ ] **Étape 6 — SEO / partage** : balises Open Graph + description sur toutes les
