@@ -146,7 +146,7 @@ h1, h2, h3, h4 {
 /* ---------- Bannière / hero ---------- */
 .hero {
   background: linear-gradient(135deg, rgba(11, 61, 89, 0.92), rgba(20, 97, 140, 0.85)),
-    url("../images/hero.svg") center/cover no-repeat;
+    url("../images/bannieres/accueil.webp") center/cover no-repeat;
   color: var(--blanc);
   padding: 4rem 1.2rem;
   text-align: center;
@@ -1521,4 +1521,36 @@ summary:focus-visible {
   padding: 0.6rem 1rem;
   font-size: 0.9rem;
   margin-top: 0.6rem;
+}
+
+/* ---------- Bannières illustrées ---------- */
+.banniere-periode {
+  max-width: var(--largeur-max);
+  margin: 0 auto;
+  padding: 0 1.2rem;
+}
+
+.banniere-periode img {
+  width: 100%;
+  border-radius: 0 0 var(--rayon) var(--rayon);
+  box-shadow: var(--ombre);
+}
+
+.banniere-periode figcaption {
+  font-size: 0.75rem;
+  color: var(--gris);
+  text-align: right;
+  padding: 0.3rem 0.2rem 0;
+}
+
+.carte-periode .vignette-periode {
+  width: 100%;
+  aspect-ratio: 8 / 3;
+  object-fit: cover;
+}
+
+@media print {
+  .banniere-periode {
+    display: none;
+  }
 }

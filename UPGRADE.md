@@ -45,7 +45,7 @@
   (`pages/periode-1..4.html`) : combler les manques par rapport aux précisions des
   connaissances du programme HQC de 4e secondaire (voir liste des manques dans le
   commit de l'étape).
-- [ ] **Étape 10 — Images d'illustration** : prompts fournis à l'utilisateur pour
+- [x] **Étape 10 — Images d'illustration** : prompts fournis à l'utilisateur pour
   génération externe (bannières de période stylisées, schémas). Ne JAMAIS générer
   de fausses « photos historiques » : les documents d'époque viennent de la banque.
   Intégration au retour des fichiers.
