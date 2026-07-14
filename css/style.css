@@ -1406,3 +1406,70 @@ tbody tr:nth-child(even) {
 .reponse-modele p {
   font-size: 0.95rem;
 }
+
+/* ---------- Impression (réviser sur papier) ---------- */
+@media print {
+  .site-header,
+  .site-footer,
+  .btn-menu,
+  .nav-periodes,
+  .quiz-tableau,
+  .barre-recherche,
+  .btn,
+  .btn-secondaire {
+    display: none !important;
+  }
+
+  body {
+    color: #000;
+  }
+
+  .entete-periode,
+  .quiz,
+  .reponse-longue,
+  .encadre {
+    box-shadow: none;
+    border: 1px solid #bbb;
+    color: #000;
+  }
+
+  .entete-periode {
+    background: none;
+  }
+
+  .entete-periode h1,
+  .entete-periode .annees,
+  .fil-ariane,
+  .fil-ariane a {
+    color: #000;
+    background: none;
+  }
+
+  /* Montrer les réponses modèles à l'impression */
+  .reponse-modele,
+  .reponse-modele[open] {
+    display: block;
+  }
+
+  details.reponse-modele summary {
+    display: none;
+  }
+
+  details.reponse-modele > *:not(summary) {
+    display: block !important;
+  }
+
+  .layout-cours {
+    display: block;
+  }
+
+  .sommaire {
+    display: none;
+  }
+
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.75em;
+    color: #555;
+  }
+}

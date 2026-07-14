@@ -23,7 +23,7 @@
 - [x] **Étape 3 — Pratique de réponse longue** (`pages/revision.html` ou nouvelle page) :
   2-3 questions à développement par période (reformulées, jamais copiées), avec
   démarche par étapes et réponse modèle repliable (`<details>`) pour l'autocorrection.
-- [ ] **Étape 4 — Maillage des pages de période** (`pages/periode-*.html`) :
+- [x] **Étape 4 — Maillage des pages de période** (`pages/periode-*.html`) :
   encarts « Pratique cette période » (liens vers documents filtrés + quiz),
   styles d'impression pour réviser sur papier.
 - [ ] **Étape 5 — Accessibilité et confort** (`css/style.css`, toutes pages) :

@@ -181,6 +181,20 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!q.closest(".quiz")) brancherQuestion(q, null);
   });
 
+  // --- Impression : déplier les réponses modèles, puis restaurer ---
+  window.addEventListener("beforeprint", function () {
+    document.querySelectorAll("details:not([open])").forEach(function (d) {
+      d.dataset.refermer = "1";
+      d.open = true;
+    });
+  });
+  window.addEventListener("afterprint", function () {
+    document.querySelectorAll("details[data-refermer]").forEach(function (d) {
+      d.open = false;
+      delete d.dataset.refermer;
+    });
+  });
+
   // --- Recherche dans la banque de documents ---
   // Filtre les cartes par mots-clés (sans tenir compte des accents) et par
   // dossier; les sections vides sont masquées.
