@@ -1363,3 +1363,46 @@ tbody tr:nth-child(even) {
   top: 1rem;
   right: 1rem;
 }
+
+/* ---------- Réponses longues guidées ---------- */
+.reponse-longue {
+  background: var(--blanc);
+  border-radius: var(--rayon);
+  box-shadow: var(--ombre);
+  border-left: 5px solid var(--or);
+  padding: 1.6rem;
+  margin: 1.5rem 0;
+}
+
+.reponse-longue h3 {
+  margin: 0.5rem 0 0.8rem;
+  font-size: 1.15rem;
+}
+
+.demarche {
+  margin: 0.8rem 0 1rem 1.2rem;
+  font-size: 0.95rem;
+  color: var(--gris-fonce);
+  display: grid;
+  gap: 0.35rem;
+}
+
+.reponse-modele {
+  background: var(--bleu-clair);
+  border-radius: 8px;
+  padding: 0.7rem 1rem;
+}
+
+.reponse-modele summary {
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--bleu-fonce);
+}
+
+.reponse-modele[open] summary {
+  margin-bottom: 0.6rem;
+}
+
+.reponse-modele p {
+  font-size: 0.95rem;
+}

@@ -20,7 +20,7 @@
   champ de recherche par mots-clés + filtre par dossier sur chaque page de période;
   visionneuse (lightbox) avec légende et navigation clavier au lieu d'ouvrir
   l'image brute dans un nouvel onglet.
-- [ ] **Étape 3 — Pratique de réponse longue** (`pages/revision.html` ou nouvelle page) :
+- [x] **Étape 3 — Pratique de réponse longue** (`pages/revision.html` ou nouvelle page) :
   2-3 questions à développement par période (reformulées, jamais copiées), avec
   démarche par étapes et réponse modèle repliable (`<details>`) pour l'autocorrection.
 - [ ] **Étape 4 — Maillage des pages de période** (`pages/periode-*.html`) :
