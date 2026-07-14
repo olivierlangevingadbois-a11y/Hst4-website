@@ -36,11 +36,25 @@
 - [x] **Étape 7 — Contrôle qualité final** : vérification des liens internes,
   imbrication HTML, poids des images; mise à jour de la description du PR #1.
 
+- [x] **Étape 8 — Quiz par OI selon les recettes** (`pages/revision.html`) :
+  3 questions par opération intellectuelle (27 au total), chacune construite sur
+  la « façon de répondre » de la page Méthode (recettes : « est : », « parce que : »,
+  « cela entraîne », « tandis que », « en accord/désaccord concernant », etc.),
+  organisées en 9 séries avec leur propre tableau de bord.
+- [ ] **Étape 9 — Matière des chapitres selon le programme ministériel**
+  (`pages/periode-1..4.html`) : combler les manques par rapport aux précisions des
+  connaissances du programme HQC de 4e secondaire (voir liste des manques dans le
+  commit de l'étape).
+- [ ] **Étape 10 — Images d'illustration** : prompts fournis à l'utilisateur pour
+  génération externe (bannières de période stylisées, schémas). Ne JAMAIS générer
+  de fausses « photos historiques » : les documents d'époque viennent de la banque.
+  Intégration au retour des fichiers.
+
 ## Notes de contexte
 
 - 492 documents dans la banque (`data/repertoire_images.json`), dont 57 locaux
   dans `images/documents-2025/` (dossier « Documents d'analyse — juin 2025 »).
-- 21 questions à choix multiple dans `pages/revision.html` (9 par OI + 12 série
+- 39 questions à choix multiple dans `pages/revision.html` (27 en 9 séries par OI + 12 série
   d'entraînement liée aux documents locaux).
 - Le site est servi par GitHub Pages; la mise en privé se fait dans les
   réglages GitHub (hors de portée des outils de cette session).

@@ -1512,3 +1512,13 @@ summary:focus-visible {
     animation: none !important;
   }
 }
+
+/* Rappel de recette au-dessus de chaque série d'OI */
+.rappel-recette {
+  background: var(--gris-clair);
+  border-left: 4px solid var(--or);
+  border-radius: 0 8px 8px 0;
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
+  margin-top: 0.6rem;
+}
