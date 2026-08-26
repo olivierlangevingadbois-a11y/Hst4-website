@@ -6,8 +6,10 @@
 > Les pages `documents*.html` sont GÉNÉRÉES : modifier `tools/generer_documents.py`
 > puis relancer `python3 tools/generer_documents.py` (ne pas éditer ces pages à la main).
 > ⛔ Contrainte permanente : n'utiliser QUE des documents libres de droits
-> (domaine public ou Creative Commons) correctement attribués. Vérifier la
-> licence AVANT d'ajouter une image.
+> (domaine public ou Creative Commons) correctement attribués. Les documents
+> de la banque proviennent de RÉCITUS. Ne jamais intégrer de document dont la
+> licence est inconnue (sites d'images repartagées) ni de matériel d'évaluation
+> sous restriction : vérifier la source AVANT d'ajouter une image.
 
 ## État d'avancement
 
@@ -54,9 +56,9 @@
 ## Notes de contexte
 
 - 435 documents dans la banque (`data/repertoire_images.json`), tous d'origine
-  RÉCITUS. Les 57 documents tirés de cette série ont été retirés.
+  RÉCITUS (domaine public ou Creative Commons, attribution complète).
 - 39 questions à choix multiple dans `pages/revision.html` (27 en 9 séries par OI
-  + 12 en série d'entraînement). Toutes autonomes : l'énoncé contient les données
-  nécessaires, aucune ne dépend d'un document ministériel.
+  + 12 en série d'entraînement), dont 20 appuyées sur un document RÉCITUS et
+  2 sur un tableau de données maison.
 - Le site est servi par GitHub Pages; la mise en privé se fait dans les
   réglages GitHub (hors de portée des outils de cette session).
