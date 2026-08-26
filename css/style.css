@@ -1,0 +1,1556 @@
+/* ===================================================================
+   Histoire du Québec et du Canada — Secondaire 4
+   Feuille de style principale
+   =================================================================== */
+
+:root {
+  --bleu-fonce: #0b3d59;
+  --bleu: #14618c;
+  --bleu-clair: #e8f1f7;
+  --or: #c9a227;
+  --rouge: #9b2226;
+  --gris-fonce: #2b2b2b;
+  --gris: #5a5a5a;
+  --gris-clair: #f4f4f4;
+  --blanc: #ffffff;
+  --ombre: 0 2px 10px rgba(0, 0, 0, 0.08);
+  --rayon: 10px;
+  --largeur-max: 1100px;
+  --transition: 0.2s ease;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--gris-fonce);
+  line-height: 1.65;
+  background: var(--blanc);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--bleu);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+a:hover {
+  color: var(--bleu-fonce);
+  text-decoration: underline;
+}
+
+h1, h2, h3, h4 {
+  line-height: 1.25;
+  color: var(--bleu-fonce);
+}
+
+.contenu {
+  width: 100%;
+  max-width: var(--largeur-max);
+  margin: 0 auto;
+  padding: 0 1.2rem;
+}
+
+/* ---------- En-tête et navigation ---------- */
+.site-header {
+  background: var(--bleu-fonce);
+  color: var(--blanc);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--ombre);
+}
+
+.barre-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.7rem 1.2rem;
+  max-width: var(--largeur-max);
+  margin: 0 auto;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--blanc);
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.logo:hover {
+  text-decoration: none;
+  color: var(--or);
+}
+
+.logo .ecusson {
+  background: var(--or);
+  color: var(--bleu-fonce);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  font-size: 0.95rem;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 0.3rem;
+  align-items: center;
+}
+
+.menu a {
+  color: var(--blanc);
+  padding: 0.5rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  display: block;
+}
+
+.menu a:hover,
+.menu a.actif {
+  background: var(--bleu);
+  text-decoration: none;
+  color: var(--blanc);
+}
+
+.btn-menu {
+  display: none;
+  background: none;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  color: var(--blanc);
+  font-size: 1.4rem;
+  border-radius: 6px;
+  padding: 0.2rem 0.6rem;
+  cursor: pointer;
+}
+
+/* ---------- Bannière / hero ---------- */
+.hero {
+  background: linear-gradient(135deg, rgba(11, 61, 89, 0.92), rgba(20, 97, 140, 0.85)),
+    url("../images/bannieres/accueil.webp") center/cover no-repeat;
+  color: var(--blanc);
+  padding: 4rem 1.2rem;
+  text-align: center;
+}
+
+.hero h1 {
+  color: var(--blanc);
+  font-size: 2.4rem;
+  margin-bottom: 0.6rem;
+}
+
+.hero p {
+  font-size: 1.15rem;
+  max-width: 720px;
+  margin: 0 auto 1.5rem;
+  opacity: 0.95;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--or);
+  color: var(--bleu-fonce);
+  font-weight: 700;
+  padding: 0.7rem 1.4rem;
+  border-radius: 8px;
+  transition: transform var(--transition), background var(--transition);
+}
+
+.btn:hover {
+  background: #d9b22f;
+  color: var(--bleu-fonce);
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+.btn-secondaire {
+  background: transparent;
+  color: var(--blanc);
+  border: 2px solid var(--blanc);
+  margin-left: 0.6rem;
+}
+
+.btn-secondaire:hover {
+  background: var(--blanc);
+  color: var(--bleu-fonce);
+}
+
+/* ---------- Sections ---------- */
+section {
+  padding: 3rem 0;
+}
+
+.section-titre {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.section-titre h2 {
+  font-size: 1.9rem;
+  display: inline-block;
+  padding-bottom: 0.4rem;
+  border-bottom: 4px solid var(--or);
+}
+
+.section-titre p {
+  color: var(--gris);
+  margin-top: 0.6rem;
+}
+
+.bg-clair {
+  background: var(--gris-clair);
+}
+
+/* ---------- Grille de cartes de périodes ---------- */
+.grille-periodes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.4rem;
+}
+
+.carte-periode {
+  background: var(--blanc);
+  border-radius: var(--rayon);
+  box-shadow: var(--ombre);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border-top: 5px solid var(--bleu);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.carte-periode:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.14);
+}
+
+.carte-periode .numero {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--or);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.carte-periode .corps {
+  padding: 1.4rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.carte-periode h3 {
+  margin: 0.3rem 0 0.5rem;
+  font-size: 1.2rem;
+}
+
+.carte-periode .annees {
+  background: var(--bleu-clair);
+  color: var(--bleu-fonce);
+  font-weight: 700;
+  border-radius: 20px;
+  padding: 0.1rem 0.7rem;
+  font-size: 0.85rem;
+  align-self: flex-start;
+  margin-bottom: 0.7rem;
+}
+
+.carte-periode p {
+  color: var(--gris);
+  font-size: 0.95rem;
+  flex: 1;
+}
+
+.carte-periode .lien-carte {
+  margin-top: 1rem;
+  font-weight: 700;
+}
+
+/* ---------- Page de période ---------- */
+.entete-periode {
+  background: var(--bleu);
+  color: var(--blanc);
+  padding: 2.5rem 1.2rem;
+}
+
+.entete-periode .contenu {
+  max-width: var(--largeur-max);
+}
+
+.entete-periode .annees {
+  display: inline-block;
+  background: var(--or);
+  color: var(--bleu-fonce);
+  font-weight: 700;
+  border-radius: 20px;
+  padding: 0.15rem 0.9rem;
+  margin-bottom: 0.6rem;
+}
+
+.entete-periode h1 {
+  color: var(--blanc);
+  font-size: 2rem;
+}
+
+.fil-ariane {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 0.8rem;
+}
+
+.fil-ariane a {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Mise en page contenu + sommaire latéral */
+.layout-cours {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 2.2rem;
+  align-items: start;
+  padding-top: 2.5rem;
+  padding-bottom: 3rem;
+}
+
+.sommaire {
+  position: sticky;
+  top: 80px;
+  background: var(--gris-clair);
+  border-radius: var(--rayon);
+  padding: 1.2rem;
+  font-size: 0.92rem;
+}
+
+.sommaire h4 {
+  margin-bottom: 0.6rem;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  color: var(--gris);
+}
+
+.sommaire ol {
+  list-style: none;
+  counter-reset: item;
+}
+
+.sommaire li {
+  counter-increment: item;
+  margin-bottom: 0.4rem;
+}
+
+.sommaire li a::before {
+  content: counter(item) ". ";
+  color: var(--or);
+  font-weight: 700;
+}
+
+.article-cours h2 {
+  font-size: 1.5rem;
+  margin: 2rem 0 0.8rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 2px solid var(--bleu-clair);
+}
+
+.article-cours h2:first-child {
+  margin-top: 0;
+}
+
+.article-cours h3 {
+  font-size: 1.15rem;
+  margin: 1.4rem 0 0.5rem;
+  color: var(--bleu);
+}
+
+.article-cours p {
+  margin-bottom: 1rem;
+}
+
+.article-cours ul,
+.article-cours ol {
+  margin: 0 0 1rem 1.4rem;
+}
+
+.article-cours li {
+  margin-bottom: 0.4rem;
+}
+
+/* Encadrés pédagogiques */
+.encadre {
+  border-radius: var(--rayon);
+  padding: 1.1rem 1.3rem;
+  margin: 1.4rem 0;
+  border-left: 5px solid var(--bleu);
+  background: var(--bleu-clair);
+}
+
+.encadre.concept {
+  border-left-color: var(--or);
+  background: #fdf6e3;
+}
+
+.encadre.attention {
+  border-left-color: var(--rouge);
+  background: #fbeaea;
+}
+
+.encadre .titre-encadre {
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.3rem;
+  color: var(--bleu-fonce);
+}
+
+/* Tableau */
+.tableau-wrap {
+  overflow-x: auto;
+  margin: 1.4rem 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  min-width: 480px;
+}
+
+table caption {
+  text-align: left;
+  font-weight: 700;
+  color: var(--bleu-fonce);
+  margin-bottom: 0.5rem;
+}
+
+th, td {
+  border: 1px solid #d8d8d8;
+  padding: 0.6rem 0.8rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+thead th {
+  background: var(--bleu-fonce);
+  color: var(--blanc);
+}
+
+tbody tr:nth-child(even) {
+  background: var(--gris-clair);
+}
+
+/* Ligne du temps */
+.ligne-temps {
+  list-style: none;
+  margin: 1.5rem 0;
+  padding-left: 1.2rem;
+  border-left: 3px solid var(--bleu);
+}
+
+.ligne-temps li {
+  position: relative;
+  padding: 0 0 1.1rem 1.4rem;
+}
+
+.ligne-temps li::before {
+  content: "";
+  position: absolute;
+  left: -1.62rem;
+  top: 0.35rem;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--or);
+  border: 3px solid var(--blanc);
+  box-shadow: 0 0 0 2px var(--bleu);
+}
+
+.ligne-temps .date {
+  font-weight: 700;
+  color: var(--bleu-fonce);
+  margin-right: 0.4rem;
+}
+
+/* Navigation entre périodes */
+.nav-periodes {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 2.5rem 0 1rem;
+  flex-wrap: wrap;
+}
+
+.nav-periodes a {
+  background: var(--gris-clair);
+  border-radius: var(--rayon);
+  padding: 0.9rem 1.2rem;
+  flex: 1;
+  min-width: 220px;
+}
+
+.nav-periodes a:hover {
+  background: var(--bleu-clair);
+  text-decoration: none;
+}
+
+.nav-periodes .sens {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--gris);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.nav-periodes .suivant {
+  text-align: right;
+}
+
+/* ---------- Quiz / révision ---------- */
+.quiz {
+  background: var(--blanc);
+  border-radius: var(--rayon);
+  box-shadow: var(--ombre);
+  padding: 1.6rem;
+  margin: 1.5rem 0;
+}
+
+.question {
+  margin-bottom: 1.4rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid #eee;
+}
+
+.question:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.question p.enonce {
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+
+.options {
+  list-style: none;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.options button {
+  width: 100%;
+  text-align: left;
+  background: var(--gris-clair);
+  border: 2px solid transparent;
+  border-radius: 8px;
+  padding: 0.6rem 0.9rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: var(--transition);
+  font-family: inherit;
+}
+
+.options button:hover {
+  border-color: var(--bleu);
+}
+
+.options button.bon {
+  background: #d8f0dd;
+  border-color: #2e7d32;
+  color: #1b5e20;
+  font-weight: 700;
+}
+
+.options button.mauvais {
+  background: #fbeaea;
+  border-color: var(--rouge);
+  color: var(--rouge);
+}
+
+.retour-quiz {
+  margin-top: 0.6rem;
+  font-size: 0.9rem;
+  color: var(--gris);
+  min-height: 1.2rem;
+}
+
+/* Tableau de bord d'une série de questions (score, progression) */
+.quiz-tableau {
+  background: var(--bleu-clair);
+  border-radius: var(--rayon);
+  padding: 0.9rem 1.2rem;
+  margin: 1.5rem 0 -0.8rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem 1rem;
+}
+
+.quiz-jauge {
+  flex: 1 1 180px;
+  height: 10px;
+  background: var(--blanc);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.quiz-jauge-remplie {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: var(--bleu);
+  border-radius: 5px;
+  transition: width var(--transition);
+}
+
+.quiz-etat {
+  flex: 2 1 260px;
+  font-size: 0.9rem;
+  color: var(--bleu-fonce);
+  margin: 0;
+}
+
+.btn-recommencer {
+  background: var(--blanc);
+  border: 2px solid var(--bleu);
+  color: var(--bleu);
+  border-radius: 8px;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  transition: var(--transition);
+}
+
+.btn-recommencer:hover {
+  background: var(--bleu);
+  color: var(--blanc);
+}
+
+/* ---------- Pied de page ---------- */
+.site-footer {
+  background: var(--bleu-fonce);
+  color: rgba(255, 255, 255, 0.85);
+  padding: 2.5rem 1.2rem 1.5rem;
+  margin-top: 2rem;
+}
+
+.footer-grille {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.6rem;
+  max-width: var(--largeur-max);
+  margin: 0 auto;
+}
+
+.site-footer h4 {
+  color: var(--or);
+  margin-bottom: 0.6rem;
+}
+
+.site-footer ul {
+  list-style: none;
+}
+
+.site-footer a {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.site-footer a:hover {
+  color: var(--blanc);
+}
+
+.copyright {
+  text-align: center;
+  margin-top: 1.8rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 0.85rem;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 860px) {
+  .layout-cours {
+    grid-template-columns: 1fr;
+  }
+  .sommaire {
+    position: static;
+  }
+}
+
+@media (max-width: 720px) {
+  .btn-menu {
+    display: block;
+  }
+  .menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: var(--bleu-fonce);
+    padding: 0.6rem 1.2rem 1rem;
+    gap: 0.2rem;
+  }
+  .menu.ouvert {
+    display: flex;
+  }
+  .menu a {
+    padding: 0.7rem 0.6rem;
+  }
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+  .btn-secondaire {
+    margin-left: 0;
+    margin-top: 0.6rem;
+  }
+}
+
+/* ---------- Figures et images (sources BAnQ, domaine public) ---------- */
+.figure {
+  margin: 1.6rem 0;
+  background: var(--blanc);
+  border: 1px solid #e3e3e3;
+  border-radius: var(--rayon);
+  overflow: hidden;
+  box-shadow: var(--ombre);
+}
+
+.figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: var(--bleu-clair);
+}
+
+.figure figcaption {
+  padding: 0.7rem 1rem;
+  font-size: 0.9rem;
+  color: var(--gris-fonce);
+  border-top: 3px solid var(--or);
+}
+
+.figure figcaption .source {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.8rem;
+  color: var(--gris);
+  font-style: italic;
+}
+
+.figure figcaption .source a {
+  color: var(--gris);
+}
+
+/* Deux figures côte à côte sur grand écran */
+.figures-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+
+.figures-2 .figure {
+  margin: 1.6rem 0 0;
+}
+
+@media (max-width: 640px) {
+  .figures-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- « Façons de répondre » (opérations intellectuelles) ---------- */
+.facon {
+  border: 2px solid var(--bleu);
+  border-radius: var(--rayon);
+  margin: 1.4rem 0;
+  overflow: hidden;
+}
+
+.facon .facon-titre {
+  background: var(--bleu);
+  color: var(--blanc);
+  font-weight: 700;
+  padding: 0.6rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.facon .facon-titre::before {
+  content: "✍";
+  font-size: 1.1rem;
+}
+
+.facon .facon-corps {
+  padding: 1rem 1.2rem;
+}
+
+.facon .facon-corps p:last-child {
+  margin-bottom: 0;
+}
+
+/* Amorces de phrases / mots-clés à réutiliser dans une réponse */
+.amorces {
+  list-style: none;
+  margin: 0.6rem 0 0 !important;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.amorces li {
+  background: var(--bleu-clair);
+  color: var(--bleu-fonce);
+  border-radius: 6px;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.9rem;
+  margin: 0 !important;
+}
+
+/* Exemple de réponse modèle */
+.reponse-modele {
+  background: #f0f7f1;
+  border-left: 5px solid #2e7d32;
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  margin-top: 0.8rem;
+}
+
+.reponse-modele .etiquette {
+  display: block;
+  font-weight: 700;
+  color: #1b5e20;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.3rem;
+}
+
+/* ---------- Dossiers et galerie de documents ---------- */
+.dossier {
+  margin: 2.4rem 0;
+}
+
+.dossier > h3 {
+  font-size: 1.25rem;
+  color: var(--bleu-fonce);
+  background: var(--bleu-clair);
+  border-left: 5px solid var(--or);
+  padding: 0.6rem 0.9rem;
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 1.2rem;
+}
+
+.dossier .compte-docs {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--gris);
+}
+
+.doc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.2rem;
+}
+
+.doc-carte {
+  background: var(--blanc);
+  border: 1px solid #e3e3e3;
+  border-radius: var(--rayon);
+  box-shadow: var(--ombre);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.doc-carte:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.13);
+}
+
+.doc-carte .vignette {
+  position: relative;
+  display: block;
+  background: #11314a;
+  line-height: 0;
+}
+
+.doc-carte .vignette img {
+  width: 100%;
+  height: 190px;
+  object-fit: contain;
+  background: #11314a;
+}
+
+/* Pastille « voir en grand » */
+.doc-carte .vignette::after {
+  content: "⤢";
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 0.85rem;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.doc-carte:hover .vignette::after {
+  opacity: 1;
+}
+
+/* Bouton lecture pour les vidéos */
+.doc-carte.video .vignette::before {
+  content: "▶";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(155, 34, 38, 0.9);
+  color: #fff;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 1.3rem;
+  padding-left: 4px;
+}
+
+.doc-corps {
+  padding: 0.85rem 1rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.doc-corps h4 {
+  font-size: 1rem;
+  margin-bottom: 0.35rem;
+  color: var(--bleu-fonce);
+}
+
+.doc-source {
+  font-size: 0.78rem;
+  color: var(--gris);
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+.doc-extrait {
+  font-size: 0.85rem;
+  color: var(--gris-fonce);
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.doc-extrait details {
+  -webkit-line-clamp: none;
+}
+
+/* Sommaire des dossiers (page hub et haut de page) */
+.liste-dossiers {
+  columns: 2;
+  column-gap: 2rem;
+  margin: 1rem 0 0 1.2rem;
+}
+
+@media (max-width: 600px) {
+  .liste-dossiers {
+    columns: 1;
+  }
+}
+
+/* ===================================================================
+   « Fiches OI » — recréation web de la Boîte à OI (page Méthode)
+   =================================================================== */
+.oi-fiche {
+  border: 2px solid var(--bleu-fonce);
+  border-radius: var(--rayon);
+  margin: 1.4rem 0 2.2rem;
+  overflow: hidden;
+  background: var(--blanc);
+}
+
+.oi-fiche .oi-entete {
+  background: var(--bleu-fonce);
+  color: var(--blanc);
+  padding: 0.7rem 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.oi-fiche .oi-entete .pastille {
+  background: var(--or);
+  color: var(--bleu-fonce);
+  font-weight: 800;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+}
+
+.oi-fiche .oi-entete h3 {
+  color: var(--blanc);
+  font-size: 1.15rem;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.oi-fiche .oi-corps {
+  padding: 1.1rem 1.2rem;
+}
+
+/* Annotation surlignée (le « truc ») */
+.oi-annot {
+  display: inline-block;
+  background: #fff3a8;
+  color: #5a4b00;
+  font-style: italic;
+  font-weight: 600;
+  padding: 0.15rem 0.6rem;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+
+.oi-annot::before {
+  content: "✎ ";
+}
+
+/* Question d'exemple avec code couleur */
+.oi-question {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin: 0.3rem 0 1rem;
+}
+
+.oi-question .garde {
+  color: var(--gris-fonce);
+}
+
+.oi-question .retire {
+  color: #b03030;
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+}
+
+.oi-question .cle {
+  color: var(--bleu);
+  font-weight: 700;
+}
+
+/* La « recette » : chips numérotées reliées par des + */
+.recette {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 0.5rem;
+  background: var(--gris-clair);
+  border-radius: 8px;
+  padding: 0.9rem;
+  margin: 0.6rem 0 0.4rem;
+}
+
+.recette .chip {
+  position: relative;
+  background: var(--blanc);
+  border: 2px solid var(--bleu);
+  border-radius: 8px;
+  padding: 0.55rem 0.8rem 0.5rem;
+  font-family: "Comic Sans MS", "Segoe Print", "Bradley Hand", cursive;
+  font-size: 0.95rem;
+  color: var(--bleu-fonce);
+  display: flex;
+  align-items: center;
+}
+
+.recette .chip[data-n]::before {
+  content: attr(data-n);
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  background: var(--or);
+  color: var(--bleu-fonce);
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 0.8rem;
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--blanc);
+}
+
+.recette .chip.cle {
+  background: #fff3a8;
+  border-color: var(--or);
+}
+
+.recette .chip.rouge {
+  color: var(--rouge);
+  border-color: var(--rouge);
+}
+
+.recette .plus {
+  align-self: center;
+  font-weight: 800;
+  color: var(--gris);
+  font-size: 1.2rem;
+}
+
+/* Schéma « caractériser » : central + compléments */
+.oi-schema {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.7rem;
+  margin: 0.6rem 0;
+}
+
+.oi-schema .central {
+  grid-column: 1 / -1;
+  background: var(--bleu);
+  color: var(--blanc);
+  text-align: center;
+  font-weight: 700;
+  padding: 0.6rem;
+  border-radius: 8px;
+}
+
+.oi-schema .comp {
+  background: var(--bleu-clair);
+  border: 1px solid #cfe1ee;
+  border-radius: 8px;
+  padding: 0.55rem 0.7rem;
+  font-size: 0.9rem;
+}
+
+.oi-schema .comp .aspect {
+  display: block;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--gris);
+}
+
+/* Réponse modèle dans une fiche OI */
+.oi-fiche .reponse-modele {
+  margin-top: 0.9rem;
+}
+
+/* Lien « pratique » vers un document de la banque */
+.oi-pratique {
+  margin-top: 0.9rem;
+  font-size: 0.9rem;
+}
+
+.oi-pratique a {
+  font-weight: 700;
+}
+
+/* ---------- Rétroaction par réponse (quiz OI) ---------- */
+.options button .pourquoi {
+  display: none;
+}
+
+.question .feedback {
+  margin-top: 0.7rem;
+  border-radius: 8px;
+  padding: 0.7rem 0.9rem;
+  font-size: 0.92rem;
+  display: none;
+}
+
+.question .feedback.montre {
+  display: block;
+}
+
+.question .feedback.bonne {
+  background: #e3f3e6;
+  border-left: 5px solid #2e7d32;
+  color: #1b5e20;
+}
+
+.question .feedback.mauvaise {
+  background: #fbeaea;
+  border-left: 5px solid var(--rouge);
+  color: #6f1a1d;
+}
+
+.oi-tag {
+  display: inline-block;
+  background: var(--bleu-clair);
+  color: var(--bleu-fonce);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  margin-bottom: 0.4rem;
+}
+
+/* Document associé à une question de quiz */
+.q-doc {
+  margin: 0.5rem 0 0.8rem;
+  border: 1px solid #e3e3e3;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #11314a;
+}
+
+.q-doc img {
+  width: 100%;
+  max-height: 260px;
+  object-fit: contain;
+  background: #11314a;
+  display: block;
+}
+
+.q-doc figcaption {
+  background: var(--blanc);
+  font-size: 0.78rem;
+  color: var(--gris);
+  font-style: italic;
+  padding: 0.45rem 0.7rem;
+}
+
+/* ---------- Recherche dans la banque de documents ---------- */
+.barre-recherche {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem 1rem;
+  background: var(--blanc);
+  border-radius: var(--rayon);
+  box-shadow: var(--ombre);
+  padding: 0.9rem 1.2rem;
+  margin: 1.5rem 0;
+}
+
+.barre-recherche input[type="search"] {
+  flex: 2 1 240px;
+  border: 2px solid var(--bleu-clair);
+  border-radius: 8px;
+  padding: 0.55rem 0.9rem;
+  font-size: 0.95rem;
+  font-family: inherit;
+  transition: var(--transition);
+}
+
+.barre-recherche input[type="search"]:focus {
+  outline: none;
+  border-color: var(--bleu);
+}
+
+.barre-recherche select {
+  flex: 1 1 200px;
+  border: 2px solid var(--bleu-clair);
+  border-radius: 8px;
+  padding: 0.55rem 0.6rem;
+  font-size: 0.9rem;
+  font-family: inherit;
+  background: var(--blanc);
+  color: var(--gris-fonce);
+}
+
+.compte-resultats {
+  font-size: 0.85rem;
+  color: var(--gris);
+  min-width: 10rem;
+}
+
+/* ---------- Visionneuse d'images (lightbox) ---------- */
+.visionneuse {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(11, 33, 47, 0.92);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 1rem;
+}
+
+.visionneuse.ouverte {
+  display: flex;
+}
+
+.visionneuse figure {
+  max-width: min(1000px, 88vw);
+  max-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.visionneuse img {
+  max-width: 100%;
+  max-height: 78vh;
+  object-fit: contain;
+  border-radius: 6px;
+  background: var(--blanc);
+}
+
+.visionneuse figcaption {
+  color: #dbe9f3;
+  font-size: 0.85rem;
+  text-align: center;
+  max-width: 60ch;
+}
+
+.visionneuse button {
+  background: rgba(255, 255, 255, 0.12);
+  border: none;
+  color: var(--blanc);
+  font-size: 1.6rem;
+  line-height: 1;
+  border-radius: 50%;
+  width: 2.6rem;
+  height: 2.6rem;
+  cursor: pointer;
+  transition: var(--transition);
+  flex-shrink: 0;
+}
+
+.visionneuse button:hover:not(:disabled),
+.visionneuse button:focus-visible {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.visionneuse button:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.visionneuse .v-fermer {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+/* ---------- Réponses longues guidées ---------- */
+.reponse-longue {
+  background: var(--blanc);
+  border-radius: var(--rayon);
+  box-shadow: var(--ombre);
+  border-left: 5px solid var(--or);
+  padding: 1.6rem;
+  margin: 1.5rem 0;
+}
+
+.reponse-longue h3 {
+  margin: 0.5rem 0 0.8rem;
+  font-size: 1.15rem;
+}
+
+.demarche {
+  margin: 0.8rem 0 1rem 1.2rem;
+  font-size: 0.95rem;
+  color: var(--gris-fonce);
+  display: grid;
+  gap: 0.35rem;
+}
+
+.reponse-modele {
+  background: var(--bleu-clair);
+  border-radius: 8px;
+  padding: 0.7rem 1rem;
+}
+
+.reponse-modele summary {
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--bleu-fonce);
+}
+
+.reponse-modele[open] summary {
+  margin-bottom: 0.6rem;
+}
+
+.reponse-modele p {
+  font-size: 0.95rem;
+}
+
+/* ---------- Impression (réviser sur papier) ---------- */
+@media print {
+  .site-header,
+  .site-footer,
+  .btn-menu,
+  .nav-periodes,
+  .quiz-tableau,
+  .barre-recherche,
+  .btn,
+  .btn-secondaire {
+    display: none !important;
+  }
+
+  body {
+    color: #000;
+  }
+
+  .entete-periode,
+  .quiz,
+  .reponse-longue,
+  .encadre {
+    box-shadow: none;
+    border: 1px solid #bbb;
+    color: #000;
+  }
+
+  .entete-periode {
+    background: none;
+  }
+
+  .entete-periode h1,
+  .entete-periode .annees,
+  .fil-ariane,
+  .fil-ariane a {
+    color: #000;
+    background: none;
+  }
+
+  /* Montrer les réponses modèles à l'impression */
+  .reponse-modele,
+  .reponse-modele[open] {
+    display: block;
+  }
+
+  details.reponse-modele summary {
+    display: none;
+  }
+
+  details.reponse-modele > *:not(summary) {
+    display: block !important;
+  }
+
+  .layout-cours {
+    display: block;
+  }
+
+  .sommaire {
+    display: none;
+  }
+
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.75em;
+    color: #555;
+  }
+}
+
+/* ---------- Accessibilité ---------- */
+.evitement {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 300;
+  background: var(--or);
+  color: var(--bleu-fonce);
+  font-weight: 700;
+  padding: 0.7rem 1.2rem;
+  border-radius: 0 0 8px 0;
+}
+
+.evitement:focus {
+  left: 0;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+summary:focus-visible {
+  outline: 3px solid var(--or);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* Rappel de recette au-dessus de chaque série d'OI */
+.rappel-recette {
+  background: var(--gris-clair);
+  border-left: 4px solid var(--or);
+  border-radius: 0 8px 8px 0;
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
+  margin-top: 0.6rem;
+}
+
+/* ---------- Bannières illustrées ---------- */
+.banniere-periode {
+  max-width: var(--largeur-max);
+  margin: 0 auto;
+  padding: 0 1.2rem;
+}
+
+.banniere-periode img {
+  width: 100%;
+  border-radius: 0 0 var(--rayon) var(--rayon);
+  box-shadow: var(--ombre);
+}
+
+.banniere-periode figcaption {
+  font-size: 0.75rem;
+  color: var(--gris);
+  text-align: right;
+  padding: 0.3rem 0.2rem 0;
+}
+
+.carte-periode .vignette-periode {
+  width: 100%;
+  aspect-ratio: 8 / 3;
+  object-fit: cover;
+}
+
+@media print {
+  .banniere-periode {
+    display: none;
+  }
+}

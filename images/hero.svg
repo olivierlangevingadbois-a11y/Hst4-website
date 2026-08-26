@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="500" viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="ciel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0b3d59"/>
+      <stop offset="100%" stop-color="#14618c"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="500" fill="url(#ciel)"/>
+  <!-- Silhouette stylisée : fleuve et collines -->
+  <path d="M0 360 Q300 300 600 350 T1200 330 V500 H0 Z" fill="#0a3550" opacity="0.6"/>
+  <path d="M0 410 Q350 360 700 400 T1200 390 V500 H0 Z" fill="#082a40" opacity="0.7"/>
+  <!-- Fleur de lys stylisée -->
+  <g fill="#c9a227" opacity="0.18" transform="translate(950,90) scale(1.4)">
+    <path d="M50 0 C40 25 60 25 50 0 Z M50 5 C45 30 30 35 35 60 C40 80 60 80 65 60 C70 35 55 30 50 5 Z M30 45 C20 55 30 75 45 70 C35 60 35 50 30 45 Z M70 45 C80 55 70 75 55 70 C65 60 65 50 70 45 Z M35 78 H65 V86 H35 Z"/>
+  </g>
+</svg>

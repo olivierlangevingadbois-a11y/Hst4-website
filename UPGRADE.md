@@ -1,0 +1,64 @@
+# Plan de mise à niveau du site (courshistoire.com)
+
+> **Comment reprendre le travail** (si la session est interrompue) :
+> branche `claude/keen-volta-m2nq66` · chaque étape = 1 commit · cocher la case
+> de l'étape dans ce fichier **dans le même commit** que l'étape elle-même.
+> Les pages `documents*.html` sont GÉNÉRÉES : modifier `tools/generer_documents.py`
+> puis relancer `python3 tools/generer_documents.py` (ne pas éditer ces pages à la main).
+> ⛔ Contrainte permanente : n'utiliser QUE des documents libres de droits
+> (domaine public ou Creative Commons) correctement attribués. Les documents
+> de la banque proviennent de RÉCITUS. Ne jamais intégrer de document dont la
+> licence est inconnue (sites d'images repartagées) ni de matériel d'évaluation
+> sous restriction : vérifier la source AVANT d'ajouter une image.
+
+## État d'avancement
+
+- [x] **Étape 0 — Ce plan** : commit du plan de mise à niveau.
+- [x] **Étape 1 — Moteur de quiz v2** (`js/main.js`, `css/style.css`, `pages/revision.html`) :
+  compteur de score par série, barre de progression, mélange des choix à l'affichage,
+  bouton « Recommencer », meilleur score conservé (`localStorage`), un seul essai
+  compté par question.
+- [x] **Étape 2 — Banque de documents : recherche + visionneuse**
+  (`tools/generer_documents.py` puis régénération, `js/main.js`, `css/style.css`) :
+  champ de recherche par mots-clés + filtre par dossier sur chaque page de période;
+  visionneuse (lightbox) avec légende et navigation clavier au lieu d'ouvrir
+  l'image brute dans un nouvel onglet.
+- [x] **Étape 3 — Pratique de réponse longue** (`pages/revision.html` ou nouvelle page) :
+  2-3 questions à développement par période (reformulées, jamais copiées), avec
+  démarche par étapes et réponse modèle repliable (`<details>`) pour l'autocorrection.
+- [x] **Étape 4 — Maillage des pages de période** (`pages/periode-*.html`) :
+  encarts « Pratique cette période » (liens vers documents filtrés + quiz),
+  styles d'impression pour réviser sur papier.
+- [x] **Étape 5 — Accessibilité et confort** (`css/style.css`, toutes pages) :
+  lien d'évitement « Aller au contenu », états `:focus-visible`,
+  `prefers-reduced-motion`, contrastes vérifiés, favicon SVG, page `404.html`.
+- [x] **Étape 6 — SEO / partage** : balises Open Graph sur toutes les pages
+  (générateur inclus). `robots.txt` bloque volontairement l'indexation tant que
+  le site doit rester discret (voir le fichier pour le rouvrir); pas de sitemap
+  d'ici là.
+- [x] **Étape 7 — Contrôle qualité final** : vérification des liens internes,
+  imbrication HTML, poids des images; mise à jour de la description du PR #1.
+
+- [x] **Étape 8 — Quiz par OI selon les recettes** (`pages/revision.html`) :
+  3 questions par opération intellectuelle (27 au total), chacune construite sur
+  la « façon de répondre » de la page Méthode (recettes : « est : », « parce que : »,
+  « cela entraîne », « tandis que », « en accord/désaccord concernant », etc.),
+  organisées en 9 séries avec leur propre tableau de bord.
+- [x] **Étape 9 — Matière des chapitres selon le programme ministériel**
+  (`pages/periode-1..4.html`) : combler les manques par rapport aux précisions des
+  connaissances du programme HQC de 4e secondaire (voir liste des manques dans le
+  commit de l'étape).
+- [x] **Étape 10 — Images d'illustration** : prompts fournis à l'utilisateur pour
+  génération externe (bannières de période stylisées, schémas). Ne JAMAIS générer
+  de fausses « photos historiques » : les documents d'époque viennent de la banque.
+  Intégration au retour des fichiers.
+
+## Notes de contexte
+
+- 435 documents dans la banque (`data/repertoire_images.json`), tous d'origine
+  RÉCITUS (domaine public ou Creative Commons, attribution complète).
+- 39 questions à choix multiple dans `pages/revision.html` (27 en 9 séries par OI
+  + 12 en série d'entraînement), dont 20 appuyées sur un document RÉCITUS et
+  2 sur un tableau de données maison.
+- Le site est servi par GitHub Pages; la mise en privé se fait dans les
+  réglages GitHub (hors de portée des outils de cette session).
