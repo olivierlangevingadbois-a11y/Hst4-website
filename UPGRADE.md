@@ -5,8 +5,9 @@
 > de l'étape dans ce fichier **dans le même commit** que l'étape elle-même.
 > Les pages `documents*.html` sont GÉNÉRÉES : modifier `tools/generer_documents.py`
 > puis relancer `python3 tools/generer_documents.py` (ne pas éditer ces pages à la main).
-> Contrainte permanente : aucune mention de cette série ni reproduction
-> de ses pages complètes (source neutre « Document d'analyse, juin 2025 »).
+> ⛔ Contrainte permanente : n'utiliser QUE des documents libres de droits
+> (domaine public ou Creative Commons) correctement attribués. Vérifier la
+> licence AVANT d'ajouter une image.
 
 ## État d'avancement
 
@@ -52,9 +53,10 @@
 
 ## Notes de contexte
 
-- 492 documents dans la banque (`data/repertoire_images.json`), dont 57 locaux
-  dans `images/documents-2025/` (dossier « Documents d'analyse — juin 2025 »).
-- 39 questions à choix multiple dans `pages/revision.html` (27 en 9 séries par OI + 12 série
-  d'entraînement liée aux documents locaux).
+- 435 documents dans la banque (`data/repertoire_images.json`), tous d'origine
+  RÉCITUS. Les 57 documents tirés de cette série ont été retirés.
+- 39 questions à choix multiple dans `pages/revision.html` (27 en 9 séries par OI
+  + 12 en série d'entraînement). Toutes autonomes : l'énoncé contient les données
+  nécessaires, aucune ne dépend d'un document ministériel.
 - Le site est servi par GitHub Pages; la mise en privé se fait dans les
   réglages GitHub (hors de portée des outils de cette session).
